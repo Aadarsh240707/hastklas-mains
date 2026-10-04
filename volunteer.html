@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Volunteer with HastKala and grassroots Indian NGOs to support traditional artisans, promote sustainable craft, and preserve generational heritage.">
+  <title>Volunteer Hub | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Volunteer Page Custom Styling */
+    .vol-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(45, 31, 14, 0.92) 0%, rgba(61, 107, 61, 0.88) 100%), url('assets/images/craft_workshop.jpg') center/cover no-repeat;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      padding: 4rem 1rem;
+      color: #FFFFFF;
+    }
+
+    .vol-role-card {
+      background: #FFFFFF;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .vol-role-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(45, 31, 14, 0.1);
+    }
+
+    .vol-stat-card {
+      background: #FFFFFF;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(45, 31, 14, 0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .vol-stat-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .vol-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: #C97C3A;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .vol-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #755636;
+      font-weight: 500;
+    }
+
+    .testimonial-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #C97C3A;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION WITH PHOTOGRAPHY & COOL FLOATING BADGE
+         ========================================================================== -->
+    <section class="vol-hero page-hero-wh">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-lg-7 text-center text-lg-start">
+            <span class="badge-story animate-float mb-3 d-inline-block">🌿 Grassroots Youth Movement</span>
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 600; line-height: 1.2; margin-bottom: 1rem; color: #FFFFFF;">
+              Empower India's Artisans. Preserve Living Heritage.
+            </h1>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.7; margin-bottom: 2rem; max-width: 600px;">
+              Join 500+ passionate students, photographers, technologists, and grassroots advocates volunteering directly with master craftspeople and certified local NGOs.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+              <a href="#volunteer-form" class="btn-amber" style="padding: 0.65rem 1.8rem; font-size: 15px; text-decoration: none;">
+                Apply to Volunteer ↓
+              </a>
+              <a href="#roles" class="btn-outline-white" style="padding: 0.65rem 1.6rem; font-size: 15px; text-decoration: none;">
+                Explore Volunteer Roles
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right: Photo Collage with Floating Pill -->
+          <div class="col-12 col-lg-5">
+            <div class="hero-photo-mosaic d-none d-md-block">
+              <img src="assets/images/craft_workshop.jpg" alt="Artisan workshop with students" class="mosaic-img-main">
+              <img src="assets/images/craft_story.jpg" alt="Storytelling field visit" class="mosaic-img-sub">
+              <div class="mosaic-badge animate-float">
+                <span>✦</span> 500+ Active Youth Volunteers
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ANIMATED STATS COUNTER STRIP
+         ========================================================================== -->
+    <section style="background-color: #FDF8F3; padding: 2.5rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="row g-3 g-md-4">
+          <div class="col-6 col-md-3">
+            <div class="vol-stat-card">
+              <div class="vol-stat-num counter-val" data-target="500" data-suffix="+">500+</div>
+              <div class="vol-stat-label">Active Volunteers</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="vol-stat-card">
+              <div class="vol-stat-num counter-val" data-target="30" data-suffix="+">30+</div>
+              <div class="vol-stat-label">Verified NGO Partners</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="vol-stat-card">
+              <div class="vol-stat-num counter-val" data-target="2400" data-suffix="+">2,400+</div>
+              <div class="vol-stat-label">Hours Contributed</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="vol-stat-card">
+              <div class="vol-stat-num counter-val" data-target="12" data-suffix=" States">12 States</div>
+              <div class="vol-stat-label">Artisan Clusters Reached</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VOLUNTEER TRACKS (4 CORE ROLES WITH REAL PHOTOGRAPHY)
+         ========================================================================== -->
+    <section id="roles" class="section-wh" style="background-color: #FFFFFF; padding: 4rem 0;">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <span class="tag-artisan mb-2 d-inline-block animate-float">Your Calling</span>
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: #2D1F0E;">
+            Ways You Can Make a Tangible Difference
+          </h2>
+          <p class="section-sub" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #755636; max-width: 620px; margin: 0 auto;">
+            Choose a track matching your personal skills and passions. Available in remote, hybrid, or on-ground field modes.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Role 1: Storytelling & Photography -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card-wh vol-role-card">
+              <div class="card-img-wrapper hover-sheen" style="height: 180px;">
+                <img src="assets/images/craft_story.jpg" alt="Artisan Photography & Storytelling" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">📸 Media &amp; Story</span>
+              </div>
+              <div class="card-body p-3 d-flex flex-column flex-grow-1">
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Artisan Storytelling &amp; Photography
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #755636; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Capture high-resolution craft documentation, record artisan interviews, and author spotlight blogs that celebrate authentic generational heritage.
+                </p>
+                <div class="mt-auto">
+                  <a href="#volunteer-form" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Select This Track
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Role 2: Tech & E-Commerce Enablement -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card-wh vol-role-card">
+              <div class="card-img-wrapper hover-sheen" style="height: 180px;">
+                <img src="assets/images/craft_workshop.jpg" alt="Digital Enablement & Tech" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">💻 Tech &amp; Catalog</span>
+              </div>
+              <div class="card-body p-3 d-flex flex-column flex-grow-1">
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Digital &amp; E-Commerce Mentorship
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #755636; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Assist rural artisans with smartphone photo uploads, digital cataloging, UPI payments setup, and managing inbound customer queries.
+                </p>
+                <div class="mt-auto">
+                  <a href="#volunteer-form" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Select This Track
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Role 3: Sustainable Product Design -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card-wh vol-role-card">
+              <div class="card-img-wrapper hover-sheen" style="height: 180px;">
+                <img src="assets/images/clay_planter.jpg" alt="Design & Packaging Innovation" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">🎨 Design &amp; Craft</span>
+              </div>
+              <div class="card-body p-3 d-flex flex-column flex-grow-1">
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Design &amp; Packaging Innovation
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #755636; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Collaborate with master potters and weavers to refine contemporary colorways, eco-friendly corrugated packing, and shipping protections.
+                </p>
+                <div class="mt-auto">
+                  <a href="#volunteer-form" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Select This Track
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Role 4: Field Outreach & Health Camps -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="card-wh vol-role-card">
+              <div class="card-img-wrapper hover-sheen" style="height: 180px;">
+                <img src="assets/images/hero_craft_banner.jpg" alt="Field Logistics & Community Drives" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">🤝 Field &amp; Outreach</span>
+              </div>
+              <div class="card-body p-3 d-flex flex-column flex-grow-1">
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Field Logistics &amp; Community Drives
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #755636; line-height: 1.6; margin-bottom: 1.25rem;">
+                  Support local exhibitions at Dilli Haat and craft melas, organize weaver eye-checkup camps, and coordinate raw material deliveries.
+                </p>
+                <div class="mt-auto">
+                  <a href="#volunteer-form" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Select This Track
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VOLUNTEERS IN ACTION PHOTO GALLERY
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3.5rem 0;">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.25rem;">
+              Volunteers in Action
+            </h2>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #755636; margin: 0;">
+              Moments of collaboration between students, creators, and community leaders.
+            </p>
+          </div>
+          <span class="tag-ngo animate-float">#HastKalaCommunity</span>
+        </div>
+
+        <div class="row g-3 g-md-4">
+          <div class="col-6 col-md-3">
+            <div class="gallery-photo-item hover-sheen">
+              <img src="assets/images/craft_workshop.jpg" alt="Student weaving workshop" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-title">Handloom Masterclass</div>
+                <div class="gallery-overlay-sub">Maheshwar, MP</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="gallery-photo-item hover-sheen">
+              <img src="assets/images/craft_story.jpg" alt="Indigo dye field documentation" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-title">Indigo Vat Documentation</div>
+                <div class="gallery-overlay-sub">Uttarakhand Cluster</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="gallery-photo-item hover-sheen">
+              <img src="assets/images/pottery_artisan.jpg" alt="Clay throwing mentoring" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-title">Youth Pottery Apprentice</div>
+                <div class="gallery-overlay-sub">Jaipur, Rajasthan</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="gallery-photo-item hover-sheen">
+              <img src="assets/images/artisan_riya.jpg" alt="Artisan feedback and cataloging" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-title">Digital Cataloging Session</div>
+                <div class="gallery-overlay-sub">Kot Jewar Guild</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VOLUNTEER REGISTRATION FORM (INTERACTIVE WITH INSTANT TOAST FEEDBACK)
+         ========================================================================== -->
+    <section id="volunteer-form" class="section-wh" style="background-color: #FFFFFF; padding: 4rem 0;">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-12 col-lg-5">
+            <span class="badge-story mb-2 d-inline-block">Join the Cohort</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: #2D1F0E; line-height: 1.25; margin-bottom: 1rem;">
+              Become a HastKala Change Ambassador
+            </h2>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #755636; line-height: 1.7; margin-bottom: 1.5rem;">
+              Whether you can contribute 2 hours a week from your laptop or join a weekend field trip with our partner NGOs, your effort directly uplifts artisanal households.
+            </p>
+
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #E8F5E8; color: #3D6B3D; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">✓</div>
+                <div style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E;"><strong>Verified Volunteer Certificate</strong> signed by partnering NGOs</div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #FDF0E0; color: #C97C3A; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">✓</div>
+                <div style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E;"><strong>Direct Artisan Interaction</strong> without bureaucratic layers</div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #E8F5E8; color: #3D6B3D; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">✓</div>
+                <div style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E;"><strong>Flexible Commitments:</strong> Remote, Hybrid, or On-site</div>
+              </div>
+            </div>
+
+            <!-- College Project Trust Note -->
+            <div style="background-color: #FDF8F3; border: 1px solid #E8D8C4; border-radius: 10px; padding: 1.25rem;">
+              <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #755636; line-height: 1.6;">
+                🎓 Initiated as an academic social enterprise field project at <strong>Thakur Shyam Narayan Degree College</strong>. Every application is reviewed within 48 hours.
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="col-12 col-lg-7">
+            <div class="card-wh p-4 p-md-5" style="background: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 16px; box-shadow: 0 10px 30px rgba(45, 31, 14, 0.06);">
+              <form id="dedicatedVolunteerForm" class="form-wh">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #2D1F0E; margin-bottom: 1.5rem;">
+                  Volunteer Application
+                </h3>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
+                    <label for="volFullName" class="form-label" style="font-size: 13px; font-weight: 500;">Full Name <span style="color: #C97C3A;">*</span></label>
+                    <input type="text" id="volFullName" class="form-control" placeholder="e.g. Tanvi Kulkarni" required>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label for="volEmail" class="form-label" style="font-size: 13px; font-weight: 500;">Email Address <span style="color: #C97C3A;">*</span></label>
+                    <input type="email" id="volEmail" class="form-control" placeholder="tanvi@example.com" required>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
+                    <label for="volPhone" class="form-label" style="font-size: 13px; font-weight: 500;">Phone / WhatsApp <span style="color: #C97C3A;">*</span></label>
+                    <input type="tel" id="volPhone" class="form-control" placeholder="10-digit mobile number" required>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label for="volCity" class="form-label" style="font-size: 13px; font-weight: 500;">Current City <span style="color: #C97C3A;">*</span></label>
+                    <input type="text" id="volCity" class="form-control" placeholder="e.g. Mumbai / Jaipur / Remote" required>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
+                    <label for="volRoleInterest" class="form-label" style="font-size: 13px; font-weight: 500;">Primary Area of Interest <span style="color: #C97C3A;">*</span></label>
+                    <select id="volRoleInterest" class="form-select" required>
+                      <option value="" disabled selected>Select an area</option>
+                      <option value="storytelling">Artisan Storytelling &amp; Photography</option>
+                      <option value="tech">Digital &amp; E-Commerce Mentorship</option>
+                      <option value="design">Design &amp; Packaging Innovation</option>
+                      <option value="outreach">Field Logistics &amp; Community Drives</option>
+                      <option value="translation">Regional Language Translation</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label for="volPreferredNgo" class="form-label" style="font-size: 13px; font-weight: 500;">Preferred NGO Partner</label>
+                    <select id="volPreferredNgo" class="form-select">
+                      <option value="any">Open to Any Verified NGO</option>
+                      <option value="vikas">Vikas Parishad (Rajasthan)</option>
+                      <option value="mahila">Mahila Shakti Trust (Gujarat)</option>
+                      <option value="prakriti">Prakriti Nature Foundation (Uttarakhand)</option>
+                      <option value="vidya">Vidya Sankalp (UP)</option>
+                      <option value="aarogya">Aarogya Seva Samiti (Odisha)</option>
+                      <option value="kilkari">Kilkari Children Society (Tamil Nadu)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="volAvailability" class="form-label" style="font-size: 13px; font-weight: 500;">Weekly Availability</label>
+                  <select id="volAvailability" class="form-select">
+                    <option value="2-4">2 – 4 hours per week (Flexible remote)</option>
+                    <option value="5-8">5 – 8 hours per week (Hybrid projects)</option>
+                    <option value="weekend">Weekends only (Field workshops &amp; exhibitions)</option>
+                    <option value="fulltime">Full-time student internship (Summer / Winter)</option>
+                  </select>
+                </div>
+
+                <div class="mb-4">
+                  <label for="volMessage" class="form-label" style="font-size: 13px; font-weight: 500;">Tell Us About Yourself &amp; Skills</label>
+                  <textarea id="volMessage" class="form-control" rows="3" placeholder="Share your college/field of study, relevant hobbies (photography, social media, coding, design), or why traditional arts matter to you..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-forest w-100" style="padding: 0.75rem; font-size: 15px; font-weight: 600;">
+                  Submit Volunteer Application →
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VOLUNTEER TESTIMONIALS (STUDENT ADVOCATES)
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 4rem 0;">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; color: #2D1F0E;">
+            Voices from Our Volunteer Cohort
+          </h2>
+          <p class="section-sub" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #755636;">
+            Hear from university students and working professionals bridging grassroots traditions with the digital age.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh p-4 h-100 d-flex flex-column" style="background: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px;">
+              <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic;">
+                “Documenting Rameshwar ji’s terracotta wheel in Jaipur made me understand how ancient Indian ceramics are far healthier than synthetic dinnerware. It completely shifted my career towards heritage design.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="assets/images/artisan_riya.jpg" alt="Aarohi Mehta" class="testimonial-avatar">
+                <div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #2D1F0E;">Aarohi Mehta</div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">Media Student, Mumbai University</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh p-4 h-100 d-flex flex-column" style="background: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px;">
+              <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic;">
+                “As a computer science undergrad, helping weaver guilds in Varanasi adopt UPI QR codes and track parcel dispatches gave my technical skills real human meaning.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="assets/images/artisan_gopal.jpg" alt="Kabir Nair" class="testimonial-avatar">
+                <div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #2D1F0E;">Kabir Nair</div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #3D6B3D;">Tech Volunteer, Pune</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh p-4 h-100 d-flex flex-column" style="background: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px;">
+              <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic;">
+                “Volunteering with GreenRoots Foundation on natural dye afforestation gave our college field group unforgettable memories and an official certificate of social impact.”
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="assets/images/artisan_sunita.jpg" alt="Divya Sengupta" class="testimonial-avatar">
+                <div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #2D1F0E;">Divya Sengupta</div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">Thakur College Social Club</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans &amp; grassroots NGOs.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+
+  <script>
+    // Volunteer Form Submission Handler with celebratory toast
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('dedicatedVolunteerForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('volFullName').value.trim();
+          const roleSelect = document.getElementById('volRoleInterest');
+          const roleName = roleSelect.options[roleSelect.selectedIndex].text;
+
+          if (window.showHastkalaToast) {
+            window.showHastkalaToast(
+              'Application Received! 🎉',
+              `Thank you, ${name}! Your application for "${roleName}" has been routed to our volunteer desk. We will WhatsApp/email you shortly.`,
+              '🌿'
+            );
+          } else {
+            alert(`Thank you, ${name}! Your application has been recorded.`);
+          }
+
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

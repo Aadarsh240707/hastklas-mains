@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover and support verified grassroots NGOs partnering with traditional Indian artisans on HastKala. Make direct donations and volunteer.">
+  <title>NGOs Making a Difference | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* NGO Listing Page Specific Styles */
+    .ngo-banner-box {
+      height: 90px;
+      background-color: #E8F5E8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #3D6B3D;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+    .card-wh:hover .ngo-banner-box {
+      background-color: #D8EED8;
+    }
+    .stat-pill-hero {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(4px);
+    }
+    .ngo-mission-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #9A7A58;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — PAGE HERO
+         - Gradient #2D1F0E → #3D6B3D (dark bark to forest — signals NGO section)
+         - Height 240px, centered
+         - H1 Playfair 38px white "NGOs Making a Difference"
+         - Sub: "Support verified NGOs working across India."
+         - Two stat pills: "30+ Active NGOs" · "₹8L+ Donations received" — rgba white .15 bg, white text
+         ========================================================================== -->
+    <section class="page-hero-wh" style="background: linear-gradient(135deg, #2D1F0E 0%, #3D6B3D 100%); min-height: 240px; height: 240px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem;">
+      <div class="container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.5rem; line-height: 1.2;">
+          NGOs Making a Difference
+        </h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.25rem;">
+          Support verified NGOs working across India.
+        </p>
+
+        <!-- Two Stat Pills -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 gap-sm-3">
+          <div class="stat-pill-hero animate-float">
+            <span>🌿</span> <span class="counter-val" data-target="30" data-suffix="+">30+</span> Active NGOs
+          </div>
+          <div class="stat-pill-hero animate-float-delayed">
+            <span>🤝</span> ₹<span class="counter-val" data-target="8" data-suffix="L+">8L+</span> Donations received
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — FILTER BAR
+         - Background white, border-bottom 1px #E8D8C4, sticky
+         - Filters: Search "Search NGOs...", Cause area dropdown (Education / Health / Environment / Women Empowerment / Rural Development / Child Welfare), State dropdown
+         - Right: sort "Newest first" dropdown
+         ========================================================================== -->
+    <section class="filter-bar-wh" style="background-color: #FFFFFF; border-bottom: 1px solid #E8D8C4; padding: 1rem 0; position: sticky; top: 58px; z-index: 900;">
+      <div class="container">
+        <form class="form-wh" id="ngoFilterForm" onsubmit="event.preventDefault();">
+          <div class="row g-3 align-items-center justify-content-between">
+            <!-- Left Filters -->
+            <div class="col-12 col-lg-8">
+              <div class="row g-2 align-items-center">
+                <!-- Search NGOs -->
+                <div class="col-12 col-sm-4">
+                  <input type="search" id="ngoSearchInput" class="form-control" placeholder="Search NGOs..." aria-label="Search NGOs" style="padding: 0.45rem 0.85rem; font-size: 13px;">
+                </div>
+
+                <!-- Cause Area Dropdown -->
+                <div class="col-6 col-sm-4">
+                  <select id="causeFilter" class="form-select" aria-label="Filter by cause area" style="padding: 0.45rem 0.85rem; font-size: 13px;">
+                    <option value="">All Cause Areas</option>
+                    <option value="Education">Education</option>
+                    <option value="Health">Health</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Women Empowerment">Women Empowerment</option>
+                    <option value="Rural Development">Rural Development</option>
+                    <option value="Child Welfare">Child Welfare</option>
+                  </select>
+                </div>
+
+                <!-- State Dropdown -->
+                <div class="col-6 col-sm-4">
+                  <select id="stateFilter" class="form-select" aria-label="Filter by state" style="padding: 0.45rem 0.85rem; font-size: 13px;">
+                    <option value="">All States</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="UP">UP</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sort & Count -->
+            <div class="col-12 col-lg-4 d-flex flex-wrap align-items-center justify-content-lg-end gap-3">
+              <div style="min-width: 170px;">
+                <select id="sortFilter" class="form-select" aria-label="Sort NGOs" style="padding: 0.45rem 0.85rem; font-size: 13px;">
+                  <option value="newest">Newest first</option>
+                  <option value="volunteers">Most Volunteers</option>
+                  <option value="donations">Highest Raised</option>
+                </select>
+              </div>
+              <div id="ngoResultCount" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; white-space: nowrap;">
+                Showing 6 NGOs
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — NGO GRID
+         - Background #FDF8F3, padding 3rem 0
+         - 3-column Bootstrap grid (col-md-4), 6 NGO cards (.card-wh):
+           Top banner 90px: bg #E8F5E8, centered NGO initials (Playfair 32px #3D6B3D)
+           .tag-ngo badge absolute top-right
+           NGO name (18px/500 #2D1F0E)
+           Cause area (13px #3D6B3D, bold)
+           Mission (2 lines, 13px muted, overflow hidden)
+           State + city (12px muted with )
+           Divider
+           Stats row (12px muted): "₹45,000 raised · 120 volunteers"
+           Two buttons: "Visit NGO" btn-outline-amber small + "Donate Now" btn-forest small (links to ngo-profile.html + donate.html)
+         - Static placeholder data for all 6 NGOs (different causes, states)
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3rem 0;">
+      <div class="container">
+        <div class="row g-4" id="ngoGrid">
+          <!-- Card 1: Vikas Parishad (Rural Development, Rajasthan) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Vikas Parishad" data-cause="Rural Development" data-state="Rajasthan" data-raised="65000" data-volunteers="140" data-date="2026-10-01">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-ngo badge absolute top-right -->
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <!-- Top photo banner with sheen -->
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_vikas.jpg" alt="Vikas Parishad" loading="lazy">
+                <div class="ngo-card-avatar-pill">VP · Udaipur</div>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Vikas Parishad
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Rural Development
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Reviving village cottage industries and empowering farming families with sustainable craft cooperatives.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Udaipur, Rajasthan
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹65,000 raised · 140 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=1" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=vikas-parishad" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Mahila Shakti Trust (Women Empowerment, Gujarat) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Mahila Shakti Trust" data-cause="Women Empowerment" data-state="Gujarat" data-raised="120000" data-volunteers="210" data-date="2026-09-26">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_bunkaar.jpg" alt="Mahila Shakti Trust" loading="lazy">
+                <div class="ngo-card-avatar-pill">MS · Bhuj</div>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Mahila Shakti Trust
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Women Empowerment
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Training grassroots rural women in textile embroidery, financial literacy, and direct market access.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Bhuj, Gujarat
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹1,20,000 raised · 210 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=2" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=mahila-shakti" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Prakriti Nature Foundation (Environment, Uttarakhand) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Prakriti Nature Foundation" data-cause="Environment" data-state="Uttarakhand" data-raised="85000" data-volunteers="95" data-date="2026-09-20">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_kalarakshak.jpg" alt="Prakriti Nature Foundation" loading="lazy">
+                <div class="ngo-card-avatar-pill">PN · Dehradun</div>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Prakriti Nature Foundation
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Environment
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Promoting zero-waste natural dyes, regenerative cotton cultivation, and reforestation along artisan corridors.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Dehradun, Uttarakhand
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹85,000 raised · 95 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=3" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=prakriti-nature" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Vidya Sankalp (Education, UP) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Vidya Sankalp" data-cause="Education" data-state="UP" data-raised="45000" data-volunteers="120" data-date="2026-09-14">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_gramin.jpg" alt="Vidya Sankalp" loading="lazy">
+                <div class="ngo-card-avatar-pill">VS · Varanasi</div>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Vidya Sankalp
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Education
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Providing digital literacy, craft apprenticeships, and evening schooling for young artisan family members.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Varanasi, UP
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹45,000 raised · 120 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=4" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=vidya-sankalp" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: Aarogya Seva Samiti (Health, Odisha) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Aarogya Seva Samiti" data-cause="Health" data-state="Odisha" data-raised="52000" data-volunteers="80" data-date="2026-09-10">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_hastshilpa.jpg" alt="Aarogya Seva Samiti" loading="lazy">
+                <div class="ngo-card-avatar-pill">AS · Sambalpur</div>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Aarogya Seva Samiti
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Health
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Organizing preventative healthcare checkups, ergonomic work tools, and clean drinking water for weaver guilds.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Sambalpur, Odisha
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹52,000 raised · 80 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=5" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=aarogya-seva" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Kilkari Children Society (Child Welfare, Tamil Nadu) -->
+          <div class="col-12 col-md-4 ngo-item" data-name="Kilkari Children Society" data-cause="Child Welfare" data-state="Tamil Nadu" data-raised="98000" data-volunteers="165" data-date="2026-09-04">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-ngo position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Verified NGO
+              </span>
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_adivasi.jpg" alt="Kilkari Children Society" loading="lazy">
+                <div class="ngo-card-avatar-pill">KK · Madurai</div>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Kilkari Children Society
+                </h3>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3D6B3D;">
+                  Child Welfare
+                </div>
+                <p class="ngo-mission-text mb-2">
+                  Safeguarding artisan children from child labour through school nutrition, creative arts, and safe day centres.
+                </p>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Madurai, Tamil Nadu
+                </div>
+
+                <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 0 0 0.85rem;">
+
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  ₹98,000 raised · 165 volunteers
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="ngo-profile.html?id=6" class="btn-outline-amber btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Visit NGO
+                  </a>
+                  <a href="donate.html?ngo=kilkari-children" class="btn-forest btn-sm flex-fill text-center" style="text-decoration: none;">
+                    Donate Now
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- No Results Fallback (Hidden by default) -->
+        <div id="noNgosFound" class="text-center py-5 d-none">
+          <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #2D1F0E;">No NGOs match your filters</h3>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #9A7A58; max-width: 440px; margin: 0 auto 1.5rem;">
+            Try clearing your search query or selecting another cause area or state.
+          </p>
+          <button type="button" class="btn-outline-amber" id="resetNgoBtn">
+            Reset Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 — MISSION CALLOUT BANNER
+         - Background linear-gradient(135deg, #3D6B3D, #2D5A2D)
+         - Padding 3rem 2rem, centered text
+         - Playfair H2 white "Is your NGO on HastKala?"
+         - Sub rgba white .8: "Register your NGO — free listing, online donations, volunteer management."
+         - "Register your NGO" btn-amber
+         ========================================================================== -->
+    <section style="background: linear-gradient(135deg, #3D6B3D 0%, #2D5A2D 100%); padding: 3rem 2rem; color: #FFFFFF; text-align: center;">
+      <div class="container">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.75rem;">
+          Is your NGO on HastKala?
+        </h2>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.8); max-width: 620px; margin: 0 auto 1.75rem; line-height: 1.6;">
+          Register your NGO — free listing, online donations, volunteer management.
+        </p>
+        <a href="contact.html" class="btn-amber" style="padding: 0.75rem 2.25rem; font-size: 15px; text-decoration: none; display: inline-block;">
+          Register your NGO
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Client-side Filter & Sort Script for NGOs -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('ngoSearchInput');
+      const causeFilter = document.getElementById('causeFilter');
+      const stateFilter = document.getElementById('stateFilter');
+      const sortFilter = document.getElementById('sortFilter');
+      const resultCount = document.getElementById('ngoResultCount');
+      const resetBtn = document.getElementById('resetNgoBtn');
+      const grid = document.getElementById('ngoGrid');
+      const noResults = document.getElementById('noNgosFound');
+
+      const items = Array.from(document.querySelectorAll('.ngo-item'));
+
+      function updateNgos() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        const selectedCause = (causeFilter.value || '').trim().toLowerCase();
+        const selectedState = (stateFilter.value || '').trim().toLowerCase();
+        const selectedSort = (sortFilter.value || 'newest');
+
+        let visibleItems = [];
+
+        items.forEach(function (card) {
+          const name = (card.getAttribute('data-name') || '').toLowerCase();
+          const cause = (card.getAttribute('data-cause') || '').toLowerCase();
+          const state = (card.getAttribute('data-state') || '').toLowerCase();
+
+          const matchQuery = !query || name.includes(query) || cause.includes(query) || state.includes(query);
+          const matchCause = !selectedCause || cause === selectedCause;
+          const matchState = !selectedState || state === selectedState;
+
+          if (matchQuery && matchCause && matchState) {
+            card.style.display = '';
+            visibleItems.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Sorting logic
+        visibleItems.sort(function (a, b) {
+          const raisedA = parseFloat(a.getAttribute('data-raised') || '0');
+          const raisedB = parseFloat(b.getAttribute('data-raised') || '0');
+          const volA = parseInt(a.getAttribute('data-volunteers') || '0');
+          const volB = parseInt(b.getAttribute('data-volunteers') || '0');
+          const dateA = new Date(a.getAttribute('data-date') || '1970-01-01');
+          const dateB = new Date(b.getAttribute('data-date') || '1970-01-01');
+
+          if (selectedSort === 'volunteers') {
+            return volB - volA;
+          } else if (selectedSort === 'donations') {
+            return raisedB - raisedA;
+          } else {
+            return dateB - dateA;
+          }
+        });
+
+        visibleItems.forEach(card => grid.appendChild(card));
+
+        const count = visibleItems.length;
+        if (count === 0) {
+          noResults.classList.remove('d-none');
+          resultCount.textContent = 'Showing 0 NGOs';
+        } else {
+          noResults.classList.add('d-none');
+          resultCount.textContent = 'Showing ' + count + ' NGO' + (count === 1 ? '' : 's');
+        }
+      }
+
+      function resetAll() {
+        searchInput.value = '';
+        causeFilter.value = '';
+        stateFilter.value = '';
+        sortFilter.value = 'newest';
+        updateNgos();
+      }
+
+      if (searchInput) searchInput.addEventListener('input', updateNgos);
+      if (causeFilter) causeFilter.addEventListener('change', updateNgos);
+      if (stateFilter) stateFilter.addEventListener('change', updateNgos);
+      if (sortFilter) sortFilter.addEventListener('change', updateNgos);
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

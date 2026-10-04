@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support verified grassroots NGOs and traditional Indian artisans through direct donations and volunteer opportunities on HastKala.">
+  <title>Donate &amp; Volunteer | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Donate Page Specific Styling */
+    .amount-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .amount-btn {
+      border: 1.5px solid #E8D8C4;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #2D1F0E;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+    .amount-btn:hover {
+      border-color: #C97C3A;
+      background-color: #FDF8F3;
+    }
+    .amount-btn.active {
+      border-color: #C97C3A;
+      background-color: #FDF0E0;
+      color: #C97C3A;
+      font-weight: 600;
+    }
+    .impact-card-mini {
+      background-color: #FDF8F3;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #2D1F0E;
+    }
+    .ngo-info-box {
+      background-color: #F0F9F0;
+      border: 1px solid #C8E6C8;
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — PAGE HERO
+         - Gradient #2D1F0E → #3D6B3D, height 240px
+         - H1 Playfair 38px white "Support a Cause"
+         - Sub: "100% of your donation goes directly to the NGO."
+         - Trust badge row: Secure SSL 256-bit · Field Verified NGOs · 500+ Active Donors
+         ========================================================================== -->
+    <section class="page-hero-wh" style="background: linear-gradient(135deg, #2D1F0E 0%, #3D6B3D 100%); min-height: 240px; height: auto; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2.5rem 1rem;">
+      <div class="container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.5rem; line-height: 1.2;">
+          Support a Cause
+        </h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.25rem;">
+          100% of your donation goes directly to the NGO.
+        </p>
+
+        <!-- Trust Badge Row -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 gap-sm-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #FFFFFF;">
+          <span style="background: rgba(255, 255, 255, 0.15); padding: 5px 14px; border-radius: 20px;">Secure SSL 256-bit</span>
+          <span>·</span>
+          <span style="background: rgba(255, 255, 255, 0.15); padding: 5px 14px; border-radius: 20px;">Field Verified NGOs</span>
+          <span>·</span>
+          <span style="background: rgba(255, 255, 255, 0.15); padding: 5px 14px; border-radius: 20px;">500+ Active Donors</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — DONATE FORM
+         - Background white, padding 3rem 0
+         - Bootstrap row (col-md-7 + col-md-5):
+           LEFT COL — Donation form:
+             H2 Playfair "Make a Donation" (28px)
+             NGO selector dropdown (pre-populated with 6 NGO names), .form-wh, full-width
+             Amount button grid (2 rows × 3 cols): ₹100 · ₹250 · ₹500 · ₹1,000 · ₹2,500 · "Custom"
+             Donor Name*, Email*, Phone* fields (.form-wh)
+             Checkbox: "Make this donation anonymous"
+             Submit btn-amber full-width "Donate Now — ₹500" (amount updates dynamically via JS)
+             Disclaimer: "This is a demo donation. No real payment is processed." (11px muted)
+             On submit: show success card: "Thank you [Name]! Your ₹500 donation to GreenRoots NGO has been recorded."
+           RIGHT COL — Impact sidebar:
+             H3 Playfair "Your Impact" (22px)
+             3 impact cards (.card-wh compact, bg #FDF8F3): ₹100 = Provides family rations / ₹500 = Funds apprentice training / ₹1000 = Plants 20 timber trees
+             Selected NGO info box: NGO name, cause area, brief mission, "Visit NGO profile →"
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 3rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- LEFT COL — Donation Form -->
+          <div class="col-12 col-md-7">
+            <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+              Make a Donation
+            </h2>
+
+            <!-- Form Container -->
+            <form id="donationForm" class="form-wh">
+              <!-- NGO Selector Dropdown -->
+              <div class="form-group mb-3">
+                <label for="ngoSelect">Select an NGO <span class="required" style="color: #C97C3A;">*</span></label>
+                <select id="ngoSelect" class="form-select w-100" required>
+                  <option value="greenroots" data-name="GreenRoots Foundation" data-cause="Environment &amp; Artisan Livelihoods" data-mission="Decarbonizing craft looms and restoring natural dye agroforestry in the Himalayas." data-link="ngo-profile.html">GreenRoots Foundation (Environment)</option>
+                  <option value="vikas" data-name="Vikas Parishad" data-cause="Rural Development" data-mission="Reviving village cottage industries and empowering farming families with sustainable craft cooperatives." data-link="ngos.html">Vikas Parishad (Rural Development)</option>
+                  <option value="mahila" data-name="Mahila Shakti Trust" data-cause="Women Empowerment" data-mission="Training grassroots rural women in textile embroidery, financial literacy, and direct market access." data-link="ngos.html">Mahila Shakti Trust (Women Empowerment)</option>
+                  <option value="prakriti" data-name="Prakriti Nature Foundation" data-cause="Environment" data-mission="Promoting zero-waste natural dyes, regenerative cotton cultivation, and reforestation along artisan corridors." data-link="ngos.html">Prakriti Nature Foundation (Environment)</option>
+                  <option value="vidya" data-name="Vidya Sankalp" data-cause="Education" data-mission="Providing digital literacy, craft apprenticeships, and evening schooling for young artisan family members." data-link="ngos.html">Vidya Sankalp (Education)</option>
+                  <option value="aarogya" data-name="Aarogya Seva Samiti" data-cause="Health" data-mission="Organizing preventative healthcare checkups, ergonomic work tools, and clean drinking water for weaver guilds." data-link="ngos.html">Aarogya Seva Samiti (Health)</option>
+                </select>
+              </div>
+
+              <!-- Amount Button Grid (2 rows x 3 cols) -->
+              <div class="form-group mb-3">
+                <label class="mb-2 d-block">Contribution Frequency</label>
+                <!-- New Component 3: Frequency Toggle -->
+                <div class="donation-frequency-toggle">
+                  <button class="donation-frequency-btn active" type="button" onclick="this.parentElement.querySelectorAll('.donation-frequency-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">Give Once</button>
+                  <button class="donation-frequency-btn" type="button" onclick="this.parentElement.querySelectorAll('.donation-frequency-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">Monthly Impact</button>
+                </div>
+
+                <label class="mb-2 d-block">Select Donation Amount</label>
+                <!-- New Component 3: Donation Preset Chips -->
+                <div class="donation-chips-group" id="amountBtnGrid">
+                  <button type="button" class="donation-chip-btn" data-amount="100">₹100</button>
+                  <button type="button" class="donation-chip-btn" data-amount="250">₹250</button>
+                  <button type="button" class="donation-chip-btn active" data-amount="500">₹500</button>
+                  <button type="button" class="donation-chip-btn" data-amount="1000">₹1,000</button>
+                  <button type="button" class="donation-chip-btn" data-amount="2500">₹2,500</button>
+                  <button type="button" class="donation-chip-btn" data-amount="custom">Custom</button>
+                </div>
+
+                <!-- Custom Amount Input Container -->
+                <div id="customAmountContainer" class="mt-3 d-none">
+                  <div class="input-group">
+                    <span class="input-group-text" style="background-color: #FDF8F3; border-color: #E8D8C4; color: #2D1F0E; font-weight: 600;">₹</span>
+                    <input type="number" id="customAmountInput" class="form-control" placeholder="Enter amount (e.g. 1500)" min="10" step="10" style="min-height: 44px;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Donor Details -->
+              <div class="form-group mb-3">
+                <label for="donorName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+                <input type="text" id="donorName" class="form-control" placeholder="e.g. Aarav Mehta" required>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="donorEmail">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+                    <input type="email" id="donorEmail" class="form-control" placeholder="e.g. aarav@example.com" required>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="donorPhone">Phone Number <span class="required" style="color: #C97C3A;">*</span></label>
+                    <input type="tel" id="donorPhone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Anonymous Checkbox -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="anonymousCheck" style="border-color: #E8D8C4;">
+                <label class="form-check-label" for="anonymousCheck" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2D1F0E;">
+                  Make this donation anonymous
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="donateSubmitBtn" class="btn-amber w-100" style="padding: 0.85rem 1rem; font-size: 16px; font-weight: 500;">
+                Donate Now — ₹500
+              </button>
+
+              <!-- Disclaimer -->
+              <p class="text-center mt-2 mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                This is a demo donation. No real payment is processed.
+              </p>
+            </form>
+
+            <!-- Donation Success Card (Hidden by default) -->
+            <div id="donationSuccessCard" class="card-wh p-4 text-center d-none" style="background-color: #FDF8F3; border: 1.5px solid #C8E6C8;">
+              <div style="font-size: 48px; margin-bottom: 0.75rem;"></div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;" id="successMsgHeading">
+                Thank you Aarav! Your ₹500 donation to GreenRoots NGO has been recorded.
+              </h3>
+              <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; max-width: 440px; margin: 0 auto 1.5rem;">
+                Your generous pledge empowers verified rural artisans and grassroots environmental stewards across India.
+              </p>
+              <div class="d-flex justify-content-center gap-3">
+                <a href="ngo-profile.html" class="btn-forest btn-sm" id="successViewNgoBtn" style="text-decoration: none;">
+                  View NGO
+                </a>
+                <button type="button" class="btn-outline-amber btn-sm" id="donateAgainBtn">
+                  Donate again
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COL — Impact Sidebar -->
+          <div class="col-12 col-md-5">
+            <h3 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #2D1F0E;">
+              Your Impact
+            </h3>
+
+            <!-- 3 Impact Cards -->
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="impact-card-mini">
+                <span style="font-size: 22px;"></span>
+                <div><strong>₹100</strong> = Feeds a family for a day</div>
+              </div>
+              <div class="impact-card-mini">
+                <span style="font-size: 22px;"></span>
+                <div><strong>₹500</strong> = Educates a child for a month</div>
+              </div>
+              <div class="impact-card-mini">
+                <span style="font-size: 22px;"></span>
+                <div><strong>₹1000</strong> = Plants 20 trees</div>
+              </div>
+            </div>
+
+            <!-- Selected NGO Info Box -->
+            <div class="ngo-info-box" id="selectedNgoBox">
+              <div class="card-img-wrapper hover-sheen mb-3" style="height: 120px; border-radius: 8px;">
+                <img id="sidebarNgoImg" src="assets/images/ngo_kalarakshak.jpg" alt="Selected NGO" class="card-img" loading="lazy">
+              </div>
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <h4 id="sidebarNgoName" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #3D6B3D; margin-bottom: 0;">
+                  GreenRoots Foundation
+                </h4>
+                <span class="tag-ngo" style="background-color: #E8F5E8; color: #3D6B3D; font-size: 10px;">Verified</span>
+              </div>
+              <div id="sidebarNgoCause" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; font-weight: 500; margin-bottom: 0.5rem;">
+                Environment &amp; Artisan Livelihoods
+              </div>
+              <p id="sidebarNgoMission" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; margin-bottom: 0.75rem;">
+                Decarbonizing craft looms and restoring natural dye agroforestry in the Himalayas.
+              </p>
+              <a href="ngo-profile.html" id="sidebarNgoLink" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #3D6B3D; font-weight: 600; text-decoration: none;">
+                Visit NGO profile →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Where Your Donation Goes — Photo Impact Strip -->
+        <div class="mt-5 pt-3 border-top" style="border-top-color: #E8D8C4 !important;">
+          <div class="text-center mb-4">
+            <span class="tag-ngo mb-1 d-inline-block animate-float">100% Transparent</span>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2D1F0E;">
+              Where Your Contribution Directly Goes
+            </h3>
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <div class="card-wh h-100 overflow-hidden" style="border: 1px solid #E8D8C4; border-radius: 12px;">
+                <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                  <img src="assets/images/craft_workshop.jpg" alt="Artisan tool kits" class="card-img" loading="lazy">
+                </div>
+                <div class="p-3">
+                  <div style="font-weight: 600; font-size: 15px; color: #2D1F0E; margin-bottom: 4px;">Raw Materials &amp; Toolkits</div>
+                  <div style="font-size: 13px; color: #755636;">Purchasing unglazed river clay, certified organic vegetable dyes, and stainless steel throwing tools for young apprentices.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card-wh h-100 overflow-hidden" style="border: 1px solid #E8D8C4; border-radius: 12px;">
+                <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                  <img src="assets/images/woollen_shawl.jpg" alt="Solar powered looms" class="card-img" loading="lazy">
+                </div>
+                <div class="p-3">
+                  <div style="font-weight: 600; font-size: 15px; color: #2D1F0E; margin-bottom: 4px;">Clean Solar Micro-Grids</div>
+                  <div style="font-size: 13px; color: #755636;">Installing rooftop photovoltaic units for remote Himalayan and Kutchi weavers to eliminate costly diesel generator fumes.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card-wh h-100 overflow-hidden" style="border: 1px solid #E8D8C4; border-radius: 12px;">
+                <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                  <img src="assets/images/craft_story.jpg" alt="Healthcare & education" class="card-img" loading="lazy">
+                </div>
+                <div class="p-3">
+                  <div style="font-weight: 600; font-size: 15px; color: #2D1F0E; margin-bottom: 4px;">Artisan Family Welfare</div>
+                  <div style="font-size: 13px; color: #755636;">Free bi-annual ophthalmology checkups, ergonomic backrests for pit-loom weavers, and night school education funds.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credential Trust Strip -->
+        <div class="trust-credentials-grid mt-5">
+          <div class="trust-credential-card">
+            <div class="trust-credential-head">80G Tax Exemption</div>
+            <div class="trust-credential-sub">50% tax deduction under Indian Income Tax Act</div>
+          </div>
+          <div class="trust-credential-card">
+            <div class="trust-credential-head">100% Artisan Direct</div>
+            <div class="trust-credential-sub">Direct bank transfers to certified artisan accounts</div>
+          </div>
+          <div class="trust-credential-card">
+            <div class="trust-credential-head">Verified NGO Partner</div>
+            <div class="trust-credential-sub">Field verified by Thakur Shyam Narayan College</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — VOLUNTEER SECTION
+         ========================================================================== -->
+    <section id="volunteer" class="section-wh" style="background-color: #FDF8F3; padding: 3rem 0;">
+      <div class="container">
+        <h2 class="mb-4 text-center text-md-start" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          Become a Volunteer
+        </h2>
+
+        <div class="row g-4 g-lg-5 align-items-stretch">
+          <!-- Left: Volunteer Form -->
+          <div class="col-12 col-md-6">
+            <div class="card-wh p-4 h-100" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; box-shadow: none;">
+              <form id="volunteerSectionForm" class="form-wh">
+                <!-- Name* -->
+                <div class="form-group mb-3">
+                  <label for="volSecName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+                  <input type="text" id="volSecName" class="form-control" placeholder="e.g. Priya Sharma" required>
+                </div>
+
+                <!-- Email* -->
+                <div class="form-group mb-3">
+                  <label for="volSecEmail">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+                  <input type="email" id="volSecEmail" class="form-control" placeholder="e.g. priya@example.com" required>
+                </div>
+
+                <!-- Phone* & City* -->
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                      <label for="volSecPhone">Phone Number <span class="required" style="color: #C97C3A;">*</span></label>
+                      <input type="tel" id="volSecPhone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                      <label for="volSecCity">City <span class="required" style="color: #C97C3A;">*</span></label>
+                      <input type="text" id="volSecCity" class="form-control" placeholder="e.g. Jaipur" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- NGO Selector* -->
+                <div class="form-group mb-3">
+                  <label for="volSecNgo">Preferred NGO <span class="required" style="color: #C97C3A;">*</span></label>
+                  <select id="volSecNgo" class="form-select" required>
+                    <option value="">Select NGO to support...</option>
+                    <option value="GreenRoots Foundation">GreenRoots Foundation (Environment)</option>
+                    <option value="Vikas Parishad">Vikas Parishad (Rural Development)</option>
+                    <option value="Mahila Shakti Trust">Mahila Shakti Trust (Women Empowerment)</option>
+                    <option value="Prakriti Nature Foundation">Prakriti Nature Foundation (Environment)</option>
+                    <option value="Vidya Sankalp">Vidya Sankalp (Education)</option>
+                    <option value="Aarogya Seva Samiti">Aarogya Seva Samiti (Health)</option>
+                  </select>
+                </div>
+
+                <!-- Area of Interest* -->
+                <div class="form-group mb-4">
+                  <label for="volSecInterest">Area of Interest <span class="required" style="color: #C97C3A;">*</span></label>
+                  <select id="volSecInterest" class="form-select" required>
+                    <option value="">Choose an area...</option>
+                    <option value="Teaching">Teaching &amp; Digital Literacy</option>
+                    <option value="Tree planting">Tree Planting &amp; Agroforestry</option>
+                    <option value="Health camps">Health Camps &amp; Ergonomics</option>
+                    <option value="Digital">Digital Media &amp; Storytelling</option>
+                    <option value="Fundraising">Fundraising &amp; Outreach</option>
+                  </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-forest w-100 py-2" style="font-size: 15px;">
+                  Register as Volunteer
+                </button>
+              </form>
+
+              <!-- Volunteer Success Message Card -->
+              <div id="volSuccessCard" class="text-center py-4 d-none">
+                <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;">
+                  Thank you! Your registration is complete.
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; margin-bottom: 1.5rem;">
+                  The NGO volunteer coordinator will review your profile and reach out with project dates and onboarding materials.
+                </p>
+                <button type="button" class="btn-outline-amber btn-sm" id="volRegisterAnotherBtn">
+                  Register Another Volunteer
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Volunteer Benefits Card -->
+          <div class="col-12 col-md-6">
+            <article class="card-wh p-4 p-lg-5 h-100 d-flex flex-column justify-content-center" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; box-shadow: none;">
+              <h3 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2D1F0E;">
+                Why volunteer?
+              </h3>
+
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-start gap-3">
+                  <span style="font-size: 18px; color: #3D6B3D;">✅</span>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.5;">
+                    Make a direct impact in communities
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3">
+                  <span style="font-size: 18px; color: #3D6B3D;">✅</span>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.5;">
+                    Earn a volunteer certificate
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3">
+                  <span style="font-size: 18px; color: #3D6B3D;">✅</span>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.5;">
+                    Build skills and your portfolio
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3">
+                  <span style="font-size: 18px; color: #3D6B3D;">✅</span>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.5;">
+                    Meet like-minded changemakers
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 mt-auto" style="background-color: #FDF8F3; border: 1px solid #E8D8C4; border-radius: 8px;">
+                <p class="mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #7A4520; line-height: 1.6;">
+                   Over <strong>340+ volunteers</strong> are actively mentoring artisans, organising heritage bazaars, and planting forests across India.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive JavaScript: Amount buttons, NGO syncing, and Form Submissions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Amount Button Selector Logic
+      const amountButtons = document.querySelectorAll('.amount-btn');
+      const customAmountContainer = document.getElementById('customAmountContainer');
+      const customAmountInput = document.getElementById('customAmountInput');
+      const donateSubmitBtn = document.getElementById('donateSubmitBtn');
+      let currentAmount = 500;
+      let isCustom = false;
+
+      function updateSubmitButtonText() {
+        if (donateSubmitBtn) {
+          const displayAmount = isCustom ? (parseInt(customAmountInput.value) || 0) : currentAmount;
+          donateSubmitBtn.textContent = 'Donate Now — ₹' + displayAmount.toLocaleString('en-IN');
+        }
+      }
+
+      amountButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          amountButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const val = this.getAttribute('data-amount');
+          if (val === 'custom') {
+            isCustom = true;
+            customAmountContainer.classList.remove('d-none');
+            customAmountInput.focus();
+          } else {
+            isCustom = false;
+            customAmountContainer.classList.add('d-none');
+            currentAmount = parseInt(val) || 500;
+          }
+          updateSubmitButtonText();
+        });
+      });
+
+      if (customAmountInput) {
+        customAmountInput.addEventListener('input', function () {
+          updateSubmitButtonText();
+        });
+      }
+
+      // 2. NGO Selection Sync with Right Sidebar
+      const ngoSelect = document.getElementById('ngoSelect');
+      const sidebarName = document.getElementById('sidebarNgoName');
+      const sidebarCause = document.getElementById('sidebarNgoCause');
+      const sidebarMission = document.getElementById('sidebarNgoMission');
+      const sidebarLink = document.getElementById('sidebarNgoLink');
+      const successViewNgoBtn = document.getElementById('successViewNgoBtn');
+
+      if (ngoSelect) {
+        ngoSelect.addEventListener('change', function () {
+          const selectedOpt = ngoSelect.options[ngoSelect.selectedIndex];
+          const name = selectedOpt.getAttribute('data-name');
+          const cause = selectedOpt.getAttribute('data-cause');
+          const mission = selectedOpt.getAttribute('data-mission');
+          const link = selectedOpt.getAttribute('data-link');
+
+          if (sidebarName) sidebarName.textContent = name;
+          if (sidebarCause) sidebarCause.innerHTML = cause;
+          if (sidebarMission) sidebarMission.textContent = mission;
+          if (sidebarLink) sidebarLink.href = link;
+          if (successViewNgoBtn) successViewNgoBtn.href = link;
+        });
+      }
+
+      // 3. Donation Form Submission
+      const donationForm = document.getElementById('donationForm');
+      const donationSuccessCard = document.getElementById('donationSuccessCard');
+      const successHeading = document.getElementById('successMsgHeading');
+      const donorNameInput = document.getElementById('donorName');
+      const donateAgainBtn = document.getElementById('donateAgainBtn');
+
+      if (donationForm) {
+        donationForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const donorName = donorNameInput ? (donorNameInput.value.trim() || 'Supporter') : 'Supporter';
+          const selectedOpt = ngoSelect ? ngoSelect.options[ngoSelect.selectedIndex] : null;
+          const ngoName = selectedOpt ? selectedOpt.getAttribute('data-name') : 'GreenRoots Foundation';
+          const finalAmount = isCustom ? (parseInt(customAmountInput.value) || 500) : currentAmount;
+
+          if (successHeading) {
+            successHeading.textContent = 'Thank you ' + donorName + '! Your ₹' + finalAmount.toLocaleString('en-IN') + ' donation to ' + ngoName + ' has been recorded.';
+          }
+
+          donationForm.classList.add('d-none');
+          donationSuccessCard.classList.remove('d-none');
+        });
+      }
+
+      if (donateAgainBtn) {
+        donateAgainBtn.addEventListener('click', function () {
+          donationForm.reset();
+          isCustom = false;
+          customAmountContainer.classList.add('d-none');
+          amountButtons.forEach(b => b.classList.remove('active'));
+          // Set ₹500 default
+          const default500 = document.querySelector('[data-amount="500"]');
+          if (default500) default500.classList.add('active');
+          currentAmount = 500;
+          updateSubmitButtonText();
+
+          donationSuccessCard.classList.add('d-none');
+          donationForm.classList.remove('d-none');
+        });
+      }
+
+      // 4. Volunteer Form Submission
+      const volForm = document.getElementById('volunteerSectionForm');
+      const volSuccessCard = document.getElementById('volSuccessCard');
+      const volAgainBtn = document.getElementById('volRegisterAnotherBtn');
+
+      if (volForm) {
+        volForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          volForm.classList.add('d-none');
+          volSuccessCard.classList.remove('d-none');
+        });
+      }
+
+      if (volAgainBtn) {
+        volAgainBtn.addEventListener('click', function () {
+          volForm.reset();
+          volSuccessCard.classList.add('d-none');
+          volForm.classList.remove('d-none');
+        });
+      }
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

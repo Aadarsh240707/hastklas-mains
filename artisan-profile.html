@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Riya Prajapati, Master Terracotta Potter from Jaipur, Rajasthan on HastKala. Discover hand-thrown earthenware, direct pricing, and generational craft heritage.">
+  <title>Riya Prajapati — Master Potter | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Profile-specific Warm Heritage styles */
+    .profile-hero {
+      background: linear-gradient(135deg, #2D1F0E 0%, #7A4520 100%);
+      padding: 3rem 0;
+      color: #FFFFFF;
+    }
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      background-color: #C97C3A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-outline-white {
+      background: transparent;
+      border: 1px solid #FFFFFF;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 0.5rem 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-outline-white:hover {
+      background-color: #FFFFFF;
+      color: #2D1F0E;
+      border-color: #FFFFFF;
+    }
+    .stat-box-item {
+      background-color: #FDF8F3;
+      border: 1px solid #E8D8C4;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .stat-box-item:hover {
+      border-color: #C97C3A;
+      transform: translateY(-2px);
+    }
+    .stat-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #C97C3A;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #9A7A58;
+      margin-top: 2px;
+    }
+    .filter-pill {
+      background-color: #FDF0E0;
+      color: #B06820;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-pill:hover,
+    .filter-pill.active {
+      background-color: #C97C3A;
+      color: #FFFFFF;
+    }
+    .modal-content-wh {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(45, 31, 14, 0.15);
+    }
+    .modal-header-wh {
+      border-bottom: 1px solid #E8D8C4;
+      padding: 1.25rem 1.5rem;
+    }
+    .modal-title-wh {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2D1F0E;
+    }
+    .card-compact {
+      transition: transform 0.2s ease;
+    }
+    .card-compact:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link active" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — PROFILE HERO
+         - Background linear-gradient(135deg, #2D1F0E, #7A4520), padding 3rem 0
+         - Bootstrap row (col-md-3 + col-md-9):
+           Left col: circular avatar 120px (bg #C97C3A, white initials in Playfair 36px centered)
+           Right col:
+             .tag-artisan badge
+             Name: Playfair 36px white
+             Craft type: 16px #F5C874
+             State: 14px rgba white .75 with 
+             Experience: 13px rgba white .6 — "12 years of craft"
+             Row of action buttons: "Send Enquiry" (btn-amber) + "WhatsApp" (btn-outline, white border)
+         ========================================================================== -->
+    <section class="profile-hero">
+      <div class="container">
+        <!-- Breadcrumb link back to listing -->
+        <div class="mb-3">
+          <a href="artisans.html" style="color: rgba(255, 255, 255, 0.65); font-family: 'DM Sans', sans-serif; font-size: 13px; text-decoration: none;">
+            ← Back to All Artisans
+          </a>
+        </div>
+
+        <div class="row align-items-center gy-4">
+          <!-- Left Col: Circular Avatar 120px -->
+          <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
+            <div class="position-relative">
+              <img src="assets/images/artisan_riya.jpg" alt="Riya Prajapati" class="profile-avatar-img animate-pulse-glow">
+              <span class="position-absolute" style="bottom: 0; right: 0; background: #3D6B3D; color: #FFFFFF; font-size: 11px; padding: 2px 8px; border-radius: 20px; border: 2px solid #FFFFFF;">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Right Col: Profile Info & Actions -->
+          <div class="col-12 col-md-9">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+              <span class="tag-artisan" style="background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px;">
+                Master Artisan
+              </span>
+            </div>
+
+            <h1 class="mb-1" style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; color: #FFFFFF; line-height: 1.2;">
+              Riya Prajapati
+            </h1>
+
+            <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #F5C874;">
+              Pottery &amp; Terracotta Art
+            </div>
+
+            <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.75);">
+              Jaipur, Rajasthan
+            </div>
+
+            <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.6);">
+              12 years of craft
+            </div>
+
+            <!-- Row of Action Buttons -->
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <button type="button" class="btn-amber open-enquiry-modal" data-product="General Enquiry for Riya Prajapati">
+                Send Enquiry
+              </button>
+              <button type="button" class="btn-outline-white open-enquiry-modal" data-product="Custom Craft Order - Riya Prajapati">
+                Custom Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — ABOUT + STATS ROW
+         - Background white, padding 2.5rem 0
+         - Bootstrap row (col-md-8 + col-md-4):
+           Left: H2 Playfair "About Me" (24px), paragraph bio (4–5 lines, 15px, #2D1F0E)
+                  H3 "My Craft" (20px, #7A4520), 2nd paragraph about the craft technique
+           Right: 4 stat boxes stacked (bg #FDF8F3, border 1px #E8D8C4, radius 8px, padding 1rem):
+             Products listed: 24
+             Orders fulfilled: 180
+             States served: 8
+             Years active: 12
+             Each: number in 24px/500 #C97C3A, label in 12px #9A7A58
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 2.5rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- Left: About Me & My Craft -->
+          <div class="col-12 col-md-8">
+            <h2 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2D1F0E;">
+              About Me
+            </h2>
+            <p class="mb-4" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.75;">
+              Born into a traditional lineage of Jaipur potter families, I grew up surrounded by the steady hum of clay wheels and the intoxicating fragrance of wet desert soil. Over the past twelve years, I have dedicated myself to keeping alive ancient Rajasthani porous clay throwing traditions while tailoring designs for modern conscious households. Every piece I shape celebrates handmade patience, honoring unglazed natural finishes that allow liquids and plants to breathe naturally without synthetic coatings.
+            </p>
+
+            <h3 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #7A4520;">
+              My Craft
+            </h3>
+            <p class="mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.75;">
+              My technique relies on indigenous alluvial riverbed clay sifted with fine desert sand and quartz dust to prevent cracking during firing. Each vessel is individually hand-thrown on a manual stone wheel, paddled with wooden anvils for wall strength, and sun-dried under the Rajasthan sun before slow open-fire baking in wood and husk kilns. The resulting natural terracotta micro-porosity cools stored drinking water naturally and infuses food with wholesome earthy minerals that industrial ceramics can never replicate.
+            </p>
+          </div>
+
+          <!-- Right: 4 Stat Boxes Stacked -->
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column gap-3">
+              <!-- Stat 1: Products listed -->
+              <div class="stat-box-item">
+                <div class="stat-number counter-val" data-target="24">24</div>
+                <div class="stat-label">Products listed</div>
+              </div>
+
+              <!-- Stat 2: Orders fulfilled -->
+              <div class="stat-box-item">
+                <div class="stat-number counter-val" data-target="180">180</div>
+                <div class="stat-label">Orders fulfilled</div>
+              </div>
+
+              <!-- Stat 3: States served -->
+              <div class="stat-box-item">
+                <div class="stat-number counter-val" data-target="8">8</div>
+                <div class="stat-label">States served</div>
+              </div>
+
+              <!-- Stat 4: Years active -->
+              <div class="stat-box-item">
+                <div class="stat-number counter-val" data-target="12">12</div>
+                <div class="stat-label">Years active</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — PRODUCTS GRID
+         - Background #FDF8F3, padding 3rem 0
+         - H2 Playfair "My Products" + filter row: "All" · "Pottery" · "Decor" pill buttons (#FDF0E0 bg, hover #C97C3A)
+         - 3-column Bootstrap grid, 6 product cards (.card-wh):
+           Image 200px (emoji placeholder + colored bg)
+           Name (15px/500), Price (#C97C3A 17px/500), Short desc (12px muted, 2 lines)
+           "Enquire / Order" btn-amber (full-width, small)
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3rem 0;">
+      <div class="container">
+        <!-- Section Header & Filter Row -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <h2 class="mb-1" style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 500; color: #2D1F0E;">
+              My Products
+            </h2>
+            <p class="mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58;">
+              Hand-thrown terracotta kitchenware, cooling vessels, and handcrafted earthen decor.
+            </p>
+          </div>
+
+          <!-- Filter row: "All" · "Pottery" · "Decor" pill buttons -->
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="filter-pill active" data-category="all">All</button>
+            <button type="button" class="filter-pill" data-category="pottery">Pottery</button>
+            <button type="button" class="filter-pill" data-category="decor">Decor</button>
+          </div>
+        </div>
+
+        <!-- 3-Column Bootstrap Grid (6 Product Cards) -->
+        <div class="row g-4" id="productsGrid">
+          <!-- Product Card 1: Pottery -->
+          <div class="col-12 col-md-4 product-item" data-category="pottery">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/terracotta_matka.jpg" alt="Terracotta Water Matka" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Natural Clay</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Terracotta Water Matka
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹850
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Naturally cooling porous clay pot with snug lid and smooth clay spigot for hygienic household water storage.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Terracotta Water Matka (₹850)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 2: Decor -->
+          <div class="col-12 col-md-4 product-item" data-category="decor">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/blue_pottery_vase.jpg" alt="Hand-Etched Terracotta Vase" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Mineral Glazed</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Hand-Etched Terracotta Vase
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹1,200
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Decorative table vase carved with Jaipur desert flower motifs, finished with mineral stone polish.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Hand-Etched Terracotta Vase (₹1,200)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 3: Decor -->
+          <div class="col-12 col-md-4 product-item" data-category="decor">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/terracotta_table_lamp.jpg" alt="Ceremonial Diya Set" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Festive Ambient</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Ceremonial Diya Set (Set of 6)
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹450
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Hand-pressed auspicious festive oil lamps with fluted floral rims, made for prayer rooms and celebration decor.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Ceremonial Diya Set (₹450)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 4: Pottery -->
+          <div class="col-12 col-md-4 product-item" data-category="pottery">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/clay_planter.jpg" alt="Earthen Cooking Handi" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Slow-Cook Pottery</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Earthen Cooking Handi
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹950
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Seasoned clay cooking pot seasoned with organic mustard oil for gentle heat distribution and aromatic slow stews.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Earthen Cooking Handi (₹950)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 5: Decor -->
+          <div class="col-12 col-md-4 product-item" data-category="decor">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/jagannath_wood_idol.jpg" alt="Rustic Terracotta Wall Plate" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Folk Heritage</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Rustic Terracotta Wall Plate
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹1,400
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Decorative wall hanging plate hand-embossed with Rajasthani folk musicians and natural mineral color detailing.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Rustic Terracotta Wall Plate (₹1,400)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 6: Pottery -->
+          <div class="col-12 col-md-4 product-item" data-category="pottery">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 200px;">
+                <img src="assets/images/terracotta_kulhads.jpg" alt="Glaze-Free Terracotta Cup Set" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 10px;">Set of 6</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                    Glaze-Free Terracotta Cup Set (4 pcs)
+                  </h3>
+                  <span style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 500; color: #C97C3A;">
+                    ₹600
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Unglazed reusable clay kulhads adding authentic earthy aroma to morning masala chai and chilled sweet lassi.
+                </p>
+                <div class="mt-auto">
+                  <button type="button" class="btn-amber btn-sm w-100 open-enquiry-modal" data-product="Glaze-Free Terracotta Cup Set (₹600)">
+                    Enquire / Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 — RELATED ARTISANS
+         - Background white, padding 3rem 0
+         - H2 Playfair "Other Artisans You May Like"
+         - 4-column Bootstrap grid, 4 artisan cards (compact version — image 150px, name, craft, "View" link)
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 3rem 0; border-top: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="mb-4">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 500; color: #2D1F0E;">
+            Other Artisans You May Like
+          </h2>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; margin-bottom: 0;">
+            Explore master creators preserving authentic generational craft traditions across India.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Compact Card 1: Saraswati Devi -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-wh card-compact h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 155px;">
+                <img src="assets/images/weaving_artisan.jpg" alt="Saraswati Devi" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 8px; left: 8px;">Banarasi Silk</span>
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Saraswati Devi
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; font-weight: 500;">
+                  Banarasi Silk Weaving
+                </div>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Varanasi, UP
+                </div>
+                <div class="mt-auto">
+                  <a href="artisan-profile.html" class="btn-outline-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Compact Card 2: Kiritbhai Vankar -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-wh card-compact h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 155px;">
+                <img src="assets/images/artisan_kiritbhai.jpg" alt="Kiritbhai Vankar" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 8px; left: 8px;">Kutchi Shawls</span>
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Kiritbhai Vankar
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; font-weight: 500;">
+                  Kutchi Shawl Weaving
+                </div>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Bhuj, Gujarat
+                </div>
+                <div class="mt-auto">
+                  <a href="artisan-profile.html" class="btn-outline-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Compact Card 3: Fatima Khatun -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-wh card-compact h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 155px;">
+                <img src="assets/images/artisan_fatima.jpg" alt="Fatima Khatun" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 8px; left: 8px;">Chikankari</span>
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Fatima Khatun
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; font-weight: 500;">
+                  Chikankari &amp; Zardozi
+                </div>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Lucknow, UP
+                </div>
+                <div class="mt-auto">
+                  <a href="artisan-profile.html" class="btn-outline-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Compact Card 4: Subhash Chandra Mohapatra -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-wh card-compact h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 155px;">
+                <img src="assets/images/artisan_subhash.jpg" alt="Subhash C. Mohapatra" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 8px; left: 8px;">Temple Wood</span>
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Subhash C. Mohapatra
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; font-weight: 500;">
+                  Temple Wood Carving
+                </div>
+                <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Raghurajpur, Odisha
+                </div>
+                <div class="mt-auto">
+                  <a href="artisan-profile.html" class="btn-outline-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 4 — ENQUIRY MODAL (Bootstrap Centered Modal)
+       - Trigger: any "Send Enquiry" or "Enquire / Order" button
+       - Modal header: "Send an Enquiry" (Playfair 20px), close button
+       - Form fields (.form-wh): Full Name*, Email*, Phone, Message* (textarea 4 rows), Product name (pre-filled if from product card)
+       - Submit: "Send Enquiry" btn-amber full-width
+       - Below button: "We'll respond within 24 hours." (12px muted centered)
+       - On submit: hide form, show success message "✅ Enquiry sent! Riya will contact you soon." (green text, Playfair)
+       ========================================================================== -->
+  <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-wh">
+        <!-- Modal Header -->
+        <div class="modal-header modal-header-wh d-flex justify-content-between align-items-center">
+          <h2 class="modal-title modal-title-wh mb-0" id="enquiryModalLabel">
+            Send an Enquiry
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body p-4">
+          <!-- Active Form Container -->
+          <form id="enquiryForm" class="form-wh">
+            <!-- Full Name* -->
+            <div class="form-group mb-3">
+              <label for="fullName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. Ananya Sen" required>
+            </div>
+
+            <!-- Email* -->
+            <div class="form-group mb-3">
+              <label for="emailAddress">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="email" id="emailAddress" class="form-control" placeholder="e.g. ananya@example.com" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group mb-3">
+              <label for="phoneNumber">Phone Number (Optional)</label>
+              <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter 10-digit mobile number">
+            </div>
+
+            <!-- Product Name (Pre-filled if triggered from product card) -->
+            <div class="form-group mb-3">
+              <label for="productField">Product / Subject</label>
+              <input type="text" id="productField" class="form-control" placeholder="General Craft Inquiry" readonly>
+            </div>
+
+            <!-- Message* (textarea 4 rows) -->
+            <div class="form-group mb-4">
+              <label for="enquiryMessage">Message <span class="required" style="color: #C97C3A;">*</span></label>
+              <textarea id="enquiryMessage" rows="4" class="form-control" placeholder="Ask about customization, bulk order quantities, dispatch timelines, or craft details..." required></textarea>
+            </div>
+
+            <!-- Submit Button (btn-amber full-width) -->
+            <button type="submit" class="btn-amber w-100" style="padding: 0.75rem 1rem; font-size: 15px;">
+              Send Enquiry
+            </button>
+
+            <!-- Below button caption -->
+            <p class="text-center mt-3 mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+              We'll respond within 24 hours.
+            </p>
+          </form>
+
+          <!-- Success Message State (Hidden initially) -->
+          <div id="enquirySuccessState" class="text-center py-4 d-none">
+            <div style="font-size: 48px; margin-bottom: 1rem;">✅</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;">
+              Enquiry sent! Riya will contact you soon.
+            </h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; max-width: 380px; margin: 0 auto 1.5rem;">
+              Thank you for supporting authentic traditional craft. A confirmation has been registered.
+            </p>
+            <button type="button" class="btn-outline-amber btn-sm" data-bs-dismiss="modal">
+              Close Window
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Logic: Modal Triggering, Pre-filling & Form Submission + Product Filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Modal Triggering & Pre-filling
+      const enquiryModalEl = document.getElementById('enquiryModal');
+      const enquiryModal = new bootstrap.Modal(enquiryModalEl);
+      const productField = document.getElementById('productField');
+      const enquiryForm = document.getElementById('enquiryForm');
+      const successState = document.getElementById('enquirySuccessState');
+      const triggerBtns = document.querySelectorAll('.open-enquiry-modal');
+
+      triggerBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const productName = this.getAttribute('data-product') || 'General Craft Inquiry';
+          if (productField) {
+            productField.value = productName;
+          }
+          // Reset form state if reopened
+          enquiryForm.classList.remove('d-none');
+          successState.classList.add('d-none');
+          enquiryModal.show();
+        });
+      });
+
+      // Reset on modal hide
+      enquiryModalEl.addEventListener('hidden.bs.modal', function () {
+        enquiryForm.reset();
+        enquiryForm.classList.remove('d-none');
+        successState.classList.add('d-none');
+      });
+
+      // 2. Form Submission Handler
+      enquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Hide form, show green success message
+        enquiryForm.classList.add('d-none');
+        successState.classList.remove('d-none');
+      });
+
+      // 3. Products Category Pill Filtering
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const productCards = document.querySelectorAll('.product-item');
+
+      filterPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          filterPills.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+
+          const category = this.getAttribute('data-category');
+
+          productCards.forEach(function (card) {
+            const cardCat = card.getAttribute('data-category');
+            if (category === 'all' || cardCat === category) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

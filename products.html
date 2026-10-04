@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore authentic handmade crafts, pottery, handlooms, and traditional Indian jewellery directly from master artisans on HastKala.">
+  <title>Handmade Products | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Product listing specific styling */
+    .product-img-box {
+      height: 210px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F7EFE6;
+    }
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card-wh:hover .product-img-box img {
+      transform: scale(1.08);
+    }
+    .card-wh:hover {
+      border-color: var(--color-amber);
+    }
+    .stock-pill-instock {
+      font-size: 11px;
+      color: #3D6B3D;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .stock-pill-instock::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #3D6B3D;
+      border-radius: 50%;
+    }
+    .stock-pill-order {
+      font-size: 11px;
+      color: #C97C3A;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .stock-pill-order::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #C97C3A;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — PAGE HERO
+         - Height 220px, gradient #2D1F0E → #7A4520
+         - H1 Playfair 38px white "Handmade Products", sub "Every purchase directly supports an artisan."
+         - Breadcrumb below
+         ========================================================================== -->
+    <section class="page-hero-wh" style="background: linear-gradient(135deg, #2D1F0E 0%, #7A4520 100%); min-height: 220px; height: 220px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem;">
+      <div class="container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem; line-height: 1.2;">
+          Handmade Products
+        </h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.85); margin-bottom: 0.65rem;">
+          Every purchase directly supports an artisan.
+        </p>
+        <nav class="breadcrumb-wh d-flex justify-content-center align-items-center gap-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.6);" aria-label="breadcrumb">
+          <a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Home</a>
+          <span style="color: rgba(255, 255, 255, 0.6);">›</span>
+          <span style="color: rgba(255, 255, 255, 0.6);">Shop</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — FILTER + SORT BAR
+         - Background white, border-bottom 1px #E8D8C4, padding 1rem 0
+         - Left side (filters):
+           Search input "Search products...", Category dropdown (Pottery, Textiles, Jewellery, Woodwork, Home Decor, Accessories), State dropdown, Price range dropdown (Under ₹500 / ₹500–₹2000 / ₹2000+)
+         - Right side: Sort dropdown (Newest / Price: Low to High / Price: High to Low), result count "Showing 12 of 48 products" (13px muted)
+         ========================================================================== -->
+    <section class="filter-bar-wh" style="background-color: #FFFFFF; border-bottom: 1px solid #E8D8C4; padding: 1rem 0; position: sticky; top: 58px; z-index: 900;">
+      <div class="container">
+        <!-- Desktop Filters -->
+        <div class="desktop-filters d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <input type="search" id="productSearchInput" class="form-control" placeholder="Search craft products..." style="width: 280px; min-height: 44px;">
+            <select id="productCategoryFilter" class="form-select" style="width: 180px; min-height: 44px;">
+              <option value="">All Categories</option>
+              <option value="Home Decor">Home Decor</option>
+              <option value="Textiles">Textiles</option>
+              <option value="Pottery">Pottery</option>
+              <option value="Jewellery">Jewellery</option>
+            </select>
+          </div>
+          <div>
+            <a href="#" class="clear-link" id="clearProductFilters" style="color: var(--color-amber-btn, #A85A18); font-size: 13px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; padding: 0.5rem 0.75rem;">Clear filters</a>
+          </div>
+        </div>
+        <!-- Mobile Filter Bar -->
+        <div class="filter-mobile-bar">
+          <input type="search" id="productSearchMobile" class="form-control" placeholder="Search products..." style="min-height: 44px;">
+          <button class="filter-trigger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#productFilterDrawer">
+            Filters <span class="badge rounded-pill text-white" style="background-color: var(--color-amber-btn, #A85A18);">0</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Drawer for Products -->
+    <div class="offcanvas offcanvas-bottom filter-offcanvas-wh" tabindex="-1" id="productFilterDrawer">
+      <div class="filter-offcanvas-header d-flex justify-content-between align-items-center">
+        <h5 class="offcanvas-title mb-0" style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-bark);">Filter Products</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="min-width: 44px; min-height: 44px;"></button>
+      </div>
+      <div class="filter-offcanvas-body">
+        <div class="mb-4">
+          <label class="form-label fw-medium text-bark">Category</label>
+          <select class="form-select" style="min-height: 44px;">
+            <option value="">All Categories</option>
+            <option value="Home Decor">Home Decor</option>
+            <option value="Textiles">Textiles</option>
+            <option value="Pottery">Pottery</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-offcanvas-footer d-flex gap-2">
+        <button type="button" class="btn btn-outline-secondary w-50" style="min-height: 48px;" data-bs-dismiss="offcanvas">Reset</button>
+        <button type="button" class="btn btn-amber w-50" style="min-height: 48px;" data-bs-dismiss="offcanvas">Apply</button>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 3 — PRODUCT GRID
+         - Background #FDF8F3, padding 3rem 0
+         - 4-column Bootstrap grid (col-lg-3 col-md-4 col-6), 12 product cards (.card-wh):
+           Image area 210px: emoji + coloured bg (12 unique combinations)
+           .tag-product badge absolute top-right
+           Product name (15px/500 #2D1F0E)
+           Artisan name (12px #C97C3A, links to artisan-profile.html)
+           State (11px #9A7A58 with )
+           Price (18px/500 #C97C3A)
+           Stock status: "In Stock" (green dot) or "Made to Order" (amber dot), 11px
+           "View Details" btn-amber (full-width, small, links to product-detail.html)
+         - Static placeholder data — 12 different products across categories
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3rem 0;">
+      <div class="container">
+        <div class="row g-4" id="productsGrid">
+          <!-- Card 1: Pottery -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Terracotta Water Matka" data-category="Pottery" data-state="Rajasthan" data-price="850" data-date="2026-10-01">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-product badge absolute top-right -->
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Pottery
+              </span>
+              <!-- Image area 210px: real craft photography -->
+              <div class="product-img-box" aria-label="Terracotta Water Matka">
+                <img src="assets/images/terracotta_matka.jpg" alt="Terracotta Water Matka" loading="lazy">
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Terracotta Water Matka
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Riya Prajapati
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Rajasthan
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹850
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=1" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Textiles -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Banarasi Silk Dupatta" data-category="Textiles" data-state="UP" data-price="2450" data-date="2026-09-28">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Textiles
+              </span>
+              <div class="product-img-box" aria-label="Banarasi Silk Dupatta">
+                <img src="assets/images/banarasi_silk_dupatta.jpg" alt="Banarasi Silk Dupatta" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Banarasi Silk Dupatta
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Saraswati Devi
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  UP
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹2,450
+                  </div>
+                  <span class="stock-pill-order">Made to Order</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=2" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Accessories -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Kutchi Embroidered Clutch" data-category="Accessories" data-state="Gujarat" data-price="750" data-date="2026-09-25">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Accessories
+              </span>
+              <div class="product-img-box" aria-label="Kutchi Embroidered Clutch">
+                <img src="assets/images/kutchi_clutch.jpg" alt="Kutchi Embroidered Clutch" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Kutchi Embroidered Clutch
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Manjula Ben Parmar
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Gujarat
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹750
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=3" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Jewellery -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Thanjavur Silver Temple Jhumkas" data-category="Jewellery" data-state="Tamil Nadu" data-price="3200" data-date="2026-09-20">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Jewellery
+              </span>
+              <div class="product-img-box" aria-label="Thanjavur Silver Temple Jhumkas">
+                <img src="assets/images/temple_jhumkas.jpg" alt="Thanjavur Silver Temple Jhumkas" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Thanjavur Temple Jhumkas
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Meenakshi Sundaram
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Tamil Nadu
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹3,200
+                  </div>
+                  <span class="stock-pill-order">Made to Order</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=4" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: Woodwork -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Sawantwadi Wooden Lacquer Toys" data-category="Woodwork" data-state="Maharashtra" data-price="450" data-date="2026-09-18">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Woodwork
+              </span>
+              <div class="product-img-box" aria-label="Sawantwadi Wooden Lacquer Toys">
+                <img src="assets/images/wooden_lacquer_toys.jpg" alt="Sawantwadi Wooden Lacquer Toys" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Sawantwadi Lacquer Toys
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Vasantrao Shinde
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Maharashtra
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹450
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=5" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Home Decor -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Hand-Etched Terracotta Lamp" data-category="Home Decor" data-state="Rajasthan" data-price="1650" data-date="2026-09-15">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Home Decor
+              </span>
+              <div class="product-img-box" aria-label="Hand-Etched Terracotta Table Lamp">
+                <img src="assets/images/terracotta_table_lamp.jpg" alt="Hand-Etched Terracotta Table Lamp" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Terracotta Table Lamp
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Rameshwar Prajapati
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Rajasthan
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹1,650
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=6" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 7: Textiles -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Pure Pashmina Wool Stole" data-category="Textiles" data-state="Kashmir" data-price="4800" data-date="2026-09-12">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Textiles
+              </span>
+              <div class="product-img-box" aria-label="Pure Pashmina Wool Stole">
+                <img src="assets/images/pashmina_wool_stole.jpg" alt="Pure Pashmina Wool Stole" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Pure Pashmina Wool Stole
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Ghulam Nabi
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Kashmir
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹4,800
+                  </div>
+                  <span class="stock-pill-order">Made to Order</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=7" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 8: Woodwork -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Jagannath Neem Wood Idol" data-category="Woodwork" data-state="Odisha" data-price="1850" data-date="2026-09-10">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Woodwork
+              </span>
+              <div class="product-img-box" aria-label="Jagannath Neem Wood Idol">
+                <img src="assets/images/jagannath_wood_idol.jpg" alt="Jagannath Neem Wood Idol" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Jagannath Neem Wood Idol
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Subhash C. Mohapatra
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Odisha
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹1,850
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=8" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 9: Home Decor -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Dhokra Brass Tribal Figurine" data-category="Home Decor" data-state="Chhattisgarh" data-price="1200" data-date="2026-09-08">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Home Decor
+              </span>
+              <div class="product-img-box" aria-label="Dhokra Brass Tribal Figurine">
+                <img src="assets/images/dhokra_brass_figurine.jpg" alt="Dhokra Brass Tribal Figurine" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Dhokra Brass Figurine
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Budhram Baghel
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Chhattisgarh
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹1,200
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=9" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 10: Textiles -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Chikankari Cotton Kurta Fabric" data-category="Textiles" data-state="UP" data-price="1400" data-date="2026-09-05">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Textiles
+              </span>
+              <div class="product-img-box" aria-label="Chikankari Cotton Kurta Fabric">
+                <img src="assets/images/chikankari_kurta.jpg" alt="Chikankari Cotton Kurta Fabric" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Chikankari Kurta Fabric
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Fatima Khatun
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  UP
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹1,400
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=10" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 11: Pottery -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Terracotta Kulhads (Set of 6)" data-category="Pottery" data-state="Maharashtra" data-price="380" data-date="2026-09-02">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Pottery
+              </span>
+              <div class="product-img-box" aria-label="Terracotta Kulhads (Set of 6)">
+                <img src="assets/images/terracotta_kulhads.jpg" alt="Terracotta Kulhads (Set of 6)" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Terracotta Kulhads (Set of 6)
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Devendra Kumhar
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Maharashtra
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹380
+                  </div>
+                  <span class="stock-pill-instock">In Stock</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=11" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 12: Jewellery -->
+          <div class="col-6 col-md-4 col-lg-3 product-item" data-name="Beaded Tribal Choker Necklace" data-category="Jewellery" data-state="Gujarat" data-price="920" data-date="2026-08-30">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <span class="tag-product position-absolute" style="top: 12px; right: 12px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;">
+                Jewellery
+              </span>
+              <div class="product-img-box" aria-label="Beaded Tribal Choker Necklace">
+                <img src="assets/images/tribal_choker_necklace.jpg" alt="Beaded Tribal Choker Necklace" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">
+                  Tribal Choker Necklace
+                </h3>
+                <div class="mb-1">
+                  <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A; text-decoration: none; font-weight: 500;">
+                    Daya Ben Rabari
+                  </a>
+                </div>
+                <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 11px; color: #9A7A58;">
+                  Gujarat
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-auto">
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #C97C3A;">
+                    ₹920
+                  </div>
+                  <span class="stock-pill-order">Made to Order</span>
+                </div>
+                <div>
+                  <a href="product-detail.html?id=12" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- No Results Fallback (Hidden by default) -->
+        <div id="noProductsFound" class="text-center py-5 d-none">
+          <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #2D1F0E;">No products match your filters</h3>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #9A7A58; max-width: 460px; margin: 0 auto 1.5rem;">
+            Try broadening your search keyword or clearing selected category, state, and price filters.
+          </p>
+          <button type="button" class="btn-outline-amber" id="resetProductsBtn">
+            Reset Filters
+          </button>
+        </div>
+
+        <!-- ==========================================================================
+             SECTION 4 — LOAD MORE
+             - Centered: "Load more products" btn-outline-amber + "(Showing 12 of 48)" 12px muted below
+             ========================================================================== -->
+        <div class="text-center mt-5" id="loadMoreSection">
+          <button type="button" class="btn-outline-amber" id="loadMoreBtn" style="padding: 0.65rem 2rem;">
+            Load more products
+          </button>
+          <div class="mt-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;" id="loadMoreIndicator">
+            (Showing 12 of 48)
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Client-side Filter, Sort & Search Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('productSearch');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const stateFilter = document.getElementById('stateFilter');
+      const priceFilter = document.getElementById('priceFilter');
+      const sortOrder = document.getElementById('sortOrder');
+      const resultCount = document.getElementById('productResultCount');
+      const resetBtn = document.getElementById('resetProductsBtn');
+      const grid = document.getElementById('productsGrid');
+      const noResults = document.getElementById('noProductsFound');
+      const loadMoreSection = document.getElementById('loadMoreSection');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const loadMoreIndicator = document.getElementById('loadMoreIndicator');
+
+      const items = Array.from(document.querySelectorAll('.product-item'));
+      const totalCatalogueCount = 48;
+
+      function matchesPriceRange(price, rangeKey) {
+        if (!rangeKey) return true;
+        if (rangeKey === 'under-500') return price < 500;
+        if (rangeKey === '500-2000') return price >= 500 && price <= 2000;
+        if (rangeKey === 'above-2000') return price > 2000;
+        return true;
+      }
+
+      function updateProducts() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        const selectedCat = (categoryFilter.value || '').trim().toLowerCase();
+        const selectedState = (stateFilter.value || '').trim().toLowerCase();
+        const selectedPrice = (priceFilter.value || '').trim();
+        const selectedSort = (sortOrder.value || 'newest');
+
+        let visibleItems = [];
+
+        items.forEach(function (card) {
+          const name = (card.getAttribute('data-name') || '').toLowerCase();
+          const category = (card.getAttribute('data-category') || '').toLowerCase();
+          const state = (card.getAttribute('data-state') || '').toLowerCase();
+          const price = parseFloat(card.getAttribute('data-price') || '0');
+
+          const matchQuery = !query || name.includes(query) || category.includes(query) || state.includes(query);
+          const matchCat = !selectedCat || category === selectedCat;
+          const matchState = !selectedState || state === selectedState;
+          const matchPrice = matchesPriceRange(price, selectedPrice);
+
+          if (matchQuery && matchCat && matchState && matchPrice) {
+            card.style.display = '';
+            visibleItems.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Sorting
+        visibleItems.sort(function (a, b) {
+          const priceA = parseFloat(a.getAttribute('data-price') || '0');
+          const priceB = parseFloat(b.getAttribute('data-price') || '0');
+          const dateA = new Date(a.getAttribute('data-date') || '1970-01-01');
+          const dateB = new Date(b.getAttribute('data-date') || '1970-01-01');
+
+          if (selectedSort === 'price-asc') {
+            return priceA - priceB;
+          } else if (selectedSort === 'price-desc') {
+            return priceB - priceA;
+          } else {
+            // Newest
+            return dateB - dateA;
+          }
+        });
+
+        // Re-append in sorted order
+        visibleItems.forEach(card => grid.appendChild(card));
+
+        // Update counts and visibility
+        const count = visibleItems.length;
+        if (count === 0) {
+          noResults.classList.remove('d-none');
+          loadMoreSection.classList.add('d-none');
+          resultCount.textContent = 'Showing 0 of ' + totalCatalogueCount + ' products';
+        } else {
+          noResults.classList.add('d-none');
+          loadMoreSection.classList.remove('d-none');
+          resultCount.textContent = 'Showing ' + count + ' of ' + totalCatalogueCount + ' products';
+          loadMoreIndicator.textContent = '(Showing ' + count + ' of ' + totalCatalogueCount + ')';
+        }
+      }
+
+      function resetAll() {
+        searchInput.value = '';
+        categoryFilter.value = '';
+        stateFilter.value = '';
+        priceFilter.value = '';
+        sortOrder.value = 'newest';
+        updateProducts();
+      }
+
+      // Event listeners
+      if (searchInput) searchInput.addEventListener('input', updateProducts);
+      if (categoryFilter) categoryFilter.addEventListener('change', updateProducts);
+      if (stateFilter) stateFilter.addEventListener('change', updateProducts);
+      if (priceFilter) priceFilter.addEventListener('change', updateProducts);
+      if (sortOrder) sortOrder.addEventListener('change', updateProducts);
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      // Load more simulated handler
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function () {
+          loadMoreBtn.textContent = 'All 12 Featured Products Loaded';
+          loadMoreBtn.disabled = true;
+          loadMoreBtn.classList.remove('btn-outline-amber');
+          loadMoreBtn.style.color = '#9A7A58';
+          loadMoreBtn.style.borderColor = '#E8D8C4';
+        });
+      }
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

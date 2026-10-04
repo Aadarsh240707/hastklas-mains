@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GreenRoots Foundation on HastKala. Supporting grassroots environmental sustainability, eco-friendly dye harvesting, and artisan livelihoods.">
+  <title>GreenRoots Foundation | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* NGO Profile Specific Styles */
+    .ngo-hero-box {
+      background: linear-gradient(135deg, #2D1F0E 0%, #3D6B3D 100%);
+      padding: 3rem 0;
+      color: #FFFFFF;
+    }
+    .ngo-avatar-box {
+      width: 100px;
+      height: 100px;
+      background-color: #E8F5E8;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #3D6B3D;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-outline-white {
+      background: transparent;
+      border: 1px solid #FFFFFF;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 0.55rem 1.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-outline-white:hover {
+      background-color: #FFFFFF;
+      color: #2D1F0E;
+      border-color: #FFFFFF;
+    }
+    .stat-card-ngo {
+      background-color: #F0F9F0;
+      border: 1px solid #C8E6C8;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .stat-card-ngo:hover {
+      border-color: #3D6B3D;
+      transform: translateY(-2px);
+    }
+    .stat-card-ngo .stat-val {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #3D6B3D;
+      line-height: 1.2;
+    }
+    .stat-card-ngo .stat-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #9A7A58;
+      margin-top: 2px;
+    }
+    .project-card-topbar {
+      height: 8px;
+      background-color: #3D6B3D;
+      width: 100%;
+    }
+    .event-card-ngo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background-color: #FFFFFF;
+      border: 1px solid #E8D8C4;
+      border-left: 4px solid #3D6B3D;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .event-card-ngo:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 14px rgba(45, 31, 14, 0.06);
+    }
+    .gallery-grid-ngo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 767.98px) {
+      .gallery-grid-ngo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .gallery-item-ngo {
+      height: 200px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+      user-select: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      border: 1px solid #E8D8C4;
+    }
+    .gallery-item-ngo:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+    .modal-content-wh {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(45, 31, 14, 0.15);
+    }
+    .modal-header-wh {
+      border-bottom: 1px solid #E8D8C4;
+      padding: 1.25rem 1.5rem;
+    }
+    .modal-title-wh {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2D1F0E;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — NGO HERO
+         - Background linear-gradient(135deg, #2D1F0E, #3D6B3D), padding 3rem 0
+         - Bootstrap row (col-md-2 + col-md-10):
+           Left: NGO logo box 100px (bg #E8F5E8, #3D6B3D initials Playfair 36px, radius 12px)
+           Right:
+             .tag-ngo badge
+             NGO name: Playfair 34px white
+             Cause area: 16px #F5C874
+             City, State: 14px rgba white .75
+             Reg. No: 13px rgba white .5
+             Row: "Donate Now" btn-forest + "Volunteer" btn-outline (white border)
+         ========================================================================== -->
+    <section class="ngo-hero-box">
+      <div class="container">
+        <!-- Back Link -->
+        <div class="mb-3">
+          <a href="ngos.html" style="color: rgba(255, 255, 255, 0.65); font-family: 'DM Sans', sans-serif; font-size: 13px; text-decoration: none;">
+            ← Back to All NGOs
+          </a>
+        </div>
+
+        <div class="row align-items-center gy-4">
+          <!-- Left: NGO Logo Box 100px -->
+          <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-start">
+            <div class="position-relative">
+              <img src="assets/images/ngo_kalarakshak.jpg" alt="GreenRoots Foundation" class="profile-avatar-img animate-pulse-glow" style="width: 105px; height: 105px; border-radius: 14px; object-fit: cover; border: 3px solid #F5C874;">
+              <span class="position-absolute" style="bottom: -5px; right: -5px; background: #3D6B3D; color: #FFFFFF; font-size: 10px; padding: 2px 7px; border-radius: 12px; border: 2px solid #FFFFFF;">✓ NGO</span>
+            </div>
+          </div>
+
+          <!-- Right: NGO Profile Info & Actions -->
+          <div class="col-12 col-md-10">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+              <span class="tag-ngo" style="background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px;">
+                Verified NGO
+              </span>
+            </div>
+
+            <h1 class="mb-1" style="font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 600; color: #FFFFFF; line-height: 1.25;">
+              GreenRoots Foundation
+            </h1>
+
+            <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #F5C874;">
+              Environment &amp; Sustainable Craft Livelihoods
+            </div>
+
+            <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.75);">
+              Dehradun, Uttarakhand
+            </div>
+
+            <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.5);">
+              Reg. No: NGO/IND/2015/84920
+            </div>
+
+            <!-- Row of Action Buttons -->
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a href="donate.html?ngo=greenroots" class="btn-forest" style="padding: 0.55rem 1.6rem; font-size: 14px; text-decoration: none;">
+                Donate Now
+              </a>
+              <button type="button" class="btn-outline-white" data-bs-toggle="modal" data-bs-target="#volunteerModal">
+                Volunteer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — STATS + MISSION
+         - Background white, padding 2.5rem 0
+         - Bootstrap row (col-md-8 + col-md-4):
+           Left: H2 Playfair "Our Mission" (24px), mission text (15px, 3–4 lines)
+                 H3 "What We Do" (20px, #3D6B3D, margin-top 1.5rem), 3 bullet points with ✅ prefix
+           Right: 4 stat cards (bg #F0F9F0, border 1px #C8E6C8, radius 8px, padding 1rem):
+             ₹8.2L raised · 340 volunteers · 12 projects · Since 2015
+             Number: 22px/500 #3D6B3D, label: 12px #9A7A58
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 2.5rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- Left: Mission & What We Do -->
+          <div class="col-12 col-md-8">
+            <h2 class="mb-3" style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #2D1F0E;">
+              Our Mission
+            </h2>
+            <p class="mb-4" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.75;">
+              GreenRoots Foundation bridges ecological preservation and rural craftsmanship. We empower traditional artisan communities across Northern India to replace toxic synthetic chemicals with 100% organic forest-based dyes, clean solar kilns, and regenerative agroforestry practices. By restoring circular supply chains, we ensure sustainable livelihoods while defending indigenous ecosystems.
+            </p>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #3D6B3D; margin-top: 1.5rem; margin-bottom: 1rem;">
+              What We Do
+            </h3>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.7;">
+              <li class="d-flex align-items-start gap-2">
+                <span>✅</span>
+                <span>Organising zero-waste natural indigo and madder root harvesting cooperatives across 18 Himalayan villages.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span>✅</span>
+                <span>Installing clean solar-powered spinning wheels and rainwater filtration units for handloom artisan clusters.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span>✅</span>
+                <span>Providing fair-wage certification, organic traceability, and direct e-commerce connectivity on HastKala.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: 4 Stat Cards -->
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column gap-3">
+              <!-- Stat 1 -->
+              <div class="stat-card-ngo">
+                <div class="stat-val">₹8.2L</div>
+                <div class="stat-desc">₹8.2L raised</div>
+              </div>
+
+              <!-- Stat 2 -->
+              <div class="stat-card-ngo">
+                <div class="stat-val">340</div>
+                <div class="stat-desc">340 volunteers</div>
+              </div>
+
+              <!-- Stat 3 -->
+              <div class="stat-card-ngo">
+                <div class="stat-val">12</div>
+                <div class="stat-desc">12 projects</div>
+              </div>
+
+              <!-- Stat 4 -->
+              <div class="stat-card-ngo">
+                <div class="stat-val">2015</div>
+                <div class="stat-desc">Since 2015</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — PROJECTS
+         - Background #FDF8F3, padding 2.5rem 0
+         - H2 Playfair "Our Projects"
+         - 3-column Bootstrap grid, 3 project cards (.card-wh):
+           Top colored bar 8px height (#3D6B3D bg)
+           Body: project title (16px/500), description (13px muted, 3 lines), status badge:
+             "Ongoing" = #E8F5E8 bg #3D6B3D text · "Completed" = #E8D8C4 bg #9A7A58 text
+           Bottom: start year (12px muted)
+         ========================================================================== -->
+    <section style="background-color: #FDF8F3; padding: 2.5rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          Our Projects
+        </h2>
+
+        <div class="row g-4">
+          <!-- Project Card 1 -->
+          <div class="col-12 col-md-4">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                <img src="assets/images/craft_story.jpg" alt="Zero-Waste Natural Indigo Vats" class="card-img" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                    Zero-Waste Natural Indigo Vats
+                  </h3>
+                  <span style="background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 20px; white-space: nowrap;">
+                    Ongoing
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Reviving chemical-free, regenerative indigo vats using organic jaggery fermentation with 45 village textile dyers across rural Himalayan valleys.
+                </p>
+                <div class="mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Started 2024
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="col-12 col-md-4">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                <img src="assets/images/craft_workshop.jpg" alt="Solar-Powered Artisan Looms" class="card-img" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                    Solar-Powered Artisan Looms
+                  </h3>
+                  <span style="background-color: #E8F5E8; color: #3D6B3D; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 20px; white-space: nowrap;">
+                    Ongoing
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Decarbonizing wool carding and handloom operations in off-grid Uttarakhand clusters through modular rooftop micro-solar arrays.
+                </p>
+                <div class="mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Started 2023
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="col-12 col-md-4">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div class="card-img-wrapper hover-sheen" style="height: 140px;">
+                <img src="assets/images/hero_craft_banner.jpg" alt="Himalayan Herbal Afforestation" class="card-img" loading="lazy">
+              </div>
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                  <h3 class="card-title mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                    Himalayan Herbal Afforestation
+                  </h3>
+                  <span style="background-color: #E8D8C4; color: #9A7A58; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 20px; white-space: nowrap;">
+                    Completed
+                  </span>
+                </div>
+                <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Reforested 50 hectares of indigenous walnut, pomegranate, and marigold groves providing sustainable raw materials for regional botanical dyeing.
+                </p>
+                <div class="mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                  Completed 2022 · Started 2020
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 — EVENTS
+         - Background white, padding 2.5rem 0
+         - H2 Playfair "Upcoming Events"
+         - 3 event cards (same style as home page events — date block left, info right, left border #3D6B3D)
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 2.5rem 0; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          Upcoming Events
+        </h2>
+
+        <div class="row g-4">
+          <!-- Event Card 1 -->
+          <div class="col-12 col-md-4">
+            <div class="event-card-ngo">
+              <div class="event-date-block">
+                <span class="event-day" style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #3D6B3D; line-height: 1;">18</span>
+                <span class="event-month" style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #9A7A58;">OCT</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                  Himalayan Natural Dye Masterclass
+                </h3>
+                <div class="event-ngo mb-1" style="font-size: 12px; color: #3D6B3D; font-weight: 500;">
+                  GreenRoots Foundation
+                </div>
+                <div class="event-location" style="font-size: 12px; color: #9A7A58;">
+                  FRI Dehradun, Uttarakhand
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="col-12 col-md-4">
+            <div class="event-card-ngo">
+              <div class="event-date-block">
+                <span class="event-day" style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #3D6B3D; line-height: 1;">27</span>
+                <span class="event-month" style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #9A7A58;">OCT</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                  Artisan Cooperative Showcase
+                </h3>
+                <div class="event-ngo mb-1" style="font-size: 12px; color: #3D6B3D; font-weight: 500;">
+                  GreenRoots Foundation
+                </div>
+                <div class="event-location" style="font-size: 12px; color: #9A7A58;">
+                  Dilli Haat, New Delhi
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="col-12 col-md-4">
+            <div class="event-card-ngo">
+              <div class="event-date-block">
+                <span class="event-day" style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #3D6B3D; line-height: 1;">08</span>
+                <span class="event-month" style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; color: #9A7A58;">NOV</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #2D1F0E;">
+                  Youth Eco-Craft Volunteers Drive
+                </h3>
+                <div class="event-ngo mb-1" style="font-size: 12px; color: #3D6B3D; font-weight: 500;">
+                  GreenRoots Foundation
+                </div>
+                <div class="event-location" style="font-size: 12px; color: #9A7A58;">
+                  Tapovan, Rishikesh
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 — GALLERY
+         - Background #FDF8F3, padding 2.5rem 0
+         - H2 Playfair "Gallery"
+         - CSS grid: 3 columns desktop, 2 mobile
+         - 6 gallery boxes: 200px height, different bg colors + centered emoji
+         - Hover: slight scale(1.02) + opacity .9
+         ========================================================================== -->
+    <section style="background-color: #FDF8F3; padding: 2.5rem 0;">
+      <div class="container">
+        <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          Gallery
+        </h2>
+
+        <div class="gallery-grid-ngo">
+          <!-- Photo 1 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Botanical Dye Harvest">
+            <img src="assets/images/craft_story.jpg" alt="Botanical Dye Harvest" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Botanical Dye Harvest</div>
+              <div class="gallery-overlay-sub">Dehradun Valley · Natural Pigments</div>
+            </div>
+          </div>
+          <!-- Photo 2 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Solar Handloom Training">
+            <img src="assets/images/craft_workshop.jpg" alt="Solar Handloom Training" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Solar Handloom Training</div>
+              <div class="gallery-overlay-sub">Uttarkashi · Women Weaver Guild</div>
+            </div>
+          </div>
+          <!-- Photo 3 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Village Artisan Guild">
+            <img src="assets/images/weaving_artisan.jpg" alt="Village Artisan Guild" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Village Artisan Guild</div>
+              <div class="gallery-overlay-sub">45 Co-op Members Sustained</div>
+            </div>
+          </div>
+          <!-- Photo 4 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Organic Clay Workshop">
+            <img src="assets/images/clay_planter.jpg" alt="Organic Clay Workshop" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Organic Planters &amp; Clay</div>
+              <div class="gallery-overlay-sub">Zero-Waste Sustainable Living</div>
+            </div>
+          </div>
+          <!-- Photo 5 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Eco-Craft Community Workshop">
+            <img src="assets/images/pottery_artisan.jpg" alt="Eco-Craft Community Workshop" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Community Pottery Hub</div>
+              <div class="gallery-overlay-sub">Hands-on Youth Apprenticeship</div>
+            </div>
+          </div>
+          <!-- Photo 6 -->
+          <div class="gallery-photo-item hover-sheen" aria-label="Himalayan Afforestation Drive">
+            <img src="assets/images/hero_craft_banner.jpg" alt="Himalayan Afforestation Drive" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-title">Himalayan Agroforestry</div>
+              <div class="gallery-overlay-sub">50 Hectares Walnut &amp; Marigold Reforested</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 6 — VOLUNTEER MODAL (Bootstrap Modal)
+       - Trigger: "Volunteer" button
+       - Fields: Full Name*, Email*, Phone*, City*, Area of interest* (dropdown), Message (textarea)
+       - Submit btn-forest "Register as Volunteer" → success message " Thanks! GreenRoots will reach out to you."
+       ========================================================================== -->
+  <div class="modal fade" id="volunteerModal" tabindex="-1" aria-labelledby="volunteerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-wh">
+        <div class="modal-header modal-header-wh d-flex justify-content-between align-items-center">
+          <h2 class="modal-title modal-title-wh mb-0" id="volunteerModalLabel">
+            Volunteer with GreenRoots
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Active Form Container -->
+          <form id="volunteerForm" class="form-wh">
+            <!-- Full Name* -->
+            <div class="form-group mb-3">
+              <label for="volFullName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="text" id="volFullName" class="form-control" placeholder="e.g. Siddharth Joshi" required>
+            </div>
+
+            <!-- Email* -->
+            <div class="form-group mb-3">
+              <label for="volEmail">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="email" id="volEmail" class="form-control" placeholder="e.g. siddharth@example.com" required>
+            </div>
+
+            <!-- Phone* -->
+            <div class="form-group mb-3">
+              <label for="volPhone">Phone Number <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="tel" id="volPhone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+            </div>
+
+            <!-- City* -->
+            <div class="form-group mb-3">
+              <label for="volCity">City / Location <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="text" id="volCity" class="form-control" placeholder="e.g. Dehradun / Remote" required>
+            </div>
+
+            <!-- Area of Interest* -->
+            <div class="form-group mb-3">
+              <label for="volInterest">Area of Interest <span class="required" style="color: #C97C3A;">*</span></label>
+              <select id="volInterest" class="form-select" required>
+                <option value="">Select your area of interest...</option>
+                <option value="field-workshops">Field Workshops &amp; Community Training</option>
+                <option value="marketing-storytelling">Digital Marketing &amp; Artisan Storytelling</option>
+                <option value="events-logistics">Exhibition &amp; Event Coordination</option>
+                <option value="research-impact">Eco-Audits &amp; Impact Assessment</option>
+                <option value="craft-design">Product Design &amp; Artisan Mentoring</option>
+              </select>
+            </div>
+
+            <!-- Message (textarea) -->
+            <div class="form-group mb-4">
+              <label for="volMessage">Message (Optional)</label>
+              <textarea id="volMessage" rows="3" class="form-control" placeholder="Tell us about your background or motivation to join..."></textarea>
+            </div>
+
+            <!-- Submit Button (btn-forest) -->
+            <button type="submit" class="btn-forest w-100" style="padding: 0.75rem 1rem; font-size: 15px;">
+              Register as Volunteer
+            </button>
+          </form>
+
+          <!-- Success Message State -->
+          <div id="volunteerSuccessState" class="text-center py-4 d-none">
+            <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;">
+              Thanks! GreenRoots will reach out to you.
+            </h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; max-width: 380px; margin: 0 auto 1.5rem;">
+              Your volunteer profile has been submitted. Our team will review your details and connect via email or phone within 48 hours.
+            </p>
+            <button type="button" class="btn-outline-amber btn-sm" data-bs-dismiss="modal">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Volunteer Modal JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const volForm = document.getElementById('volunteerForm');
+      const volSuccess = document.getElementById('volunteerSuccessState');
+      const volModalEl = document.getElementById('volunteerModal');
+
+      if (volForm) {
+        volForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          volForm.classList.add('d-none');
+          volSuccess.classList.remove('d-none');
+        });
+      }
+
+      if (volModalEl) {
+        volModalEl.addEventListener('hidden.bs.modal', function () {
+          if (volForm) {
+            volForm.reset();
+            volForm.classList.remove('d-none');
+          }
+          if (volSuccess) {
+            volSuccess.classList.add('d-none');
+          }
+        });
+      }
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

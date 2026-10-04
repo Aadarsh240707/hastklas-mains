@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore upcoming artisan workshops, cultural exhibitions, and grassroots NGO events across India on HastKala.">
+  <title>Events &amp; Workshops | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .events-hero {
+      background: linear-gradient(135deg, #2D1F0E 0%, #7A4520 100%);
+      min-height: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .event-card-item {
+      background-color: #FFFFFF;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      border-left: 4px solid #3D6B3D;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .event-date-block {
+      background-color: #FDF0E0;
+      color: #B06820;
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      text-align: center;
+      min-width: 70px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <a class="navbar-brand nav-logo" href="index.html">HastKala</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="events-hero page-hero-wh">
+      <div class="container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; color: #FFFFFF; font-weight: 600; margin-bottom: 0.5rem;">
+          Events &amp; Workshops
+        </h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: #F5E6C8; max-width: 600px; margin: 0 auto;">
+          Connect in person with master artisans and community activists across India.
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENTS LISTING -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3.5rem 0;">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Event 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card-wh event-card-item p-0 overflow-hidden">
+              <div class="event-card-banner hover-sheen">
+                <img src="assets/images/blue_pottery_vase.jpg" alt="Jaipur Blue Pottery Workshop" loading="lazy">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="event-date-block">
+                    <div style="font-size: 18px; font-weight: 700; line-height: 1;">12</div>
+                    <div style="font-size: 11px; text-transform: uppercase;">OCT</div>
+                  </div>
+                  <div>
+                    <span class="tag-artisan mb-1 d-inline-block">Masterclass</span>
+                    <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58;">Jaipur, Rajasthan</div>
+                  </div>
+                </div>
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Jaipur Blue Pottery Workshop
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; line-height: 1.5; margin-bottom: 1.25rem;">
+                  Hands-on quartz and natural oxide glazing masterclass with state award-winner Riya Prajapati.
+                </p>
+                <div class="mt-auto">
+                  <a href="contact.html?event=pottery" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Register / Enquire
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card-wh event-card-item p-0 overflow-hidden" style="border-left-color: #C97C3A;">
+              <div class="event-card-banner hover-sheen">
+                <img src="assets/images/weaving_artisan.jpg" alt="Heritage Handloom Weaving Tour" loading="lazy">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="event-date-block">
+                    <div style="font-size: 18px; font-weight: 700; line-height: 1;">18</div>
+                    <div style="font-size: 11px; text-transform: uppercase;">OCT</div>
+                  </div>
+                  <div>
+                    <span class="tag-product mb-1 d-inline-block">Textiles</span>
+                    <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58;">Maheshwar, MP</div>
+                  </div>
+                </div>
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Heritage Handloom Weaving Tour
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; line-height: 1.5; margin-bottom: 1.25rem;">
+                  Learn intricate zari warping techniques and pit-loom geometry alongside women weaving collectives.
+                </p>
+                <div class="mt-auto">
+                  <a href="contact.html?event=weaving" class="btn-outline-amber btn-sm w-100 text-center d-block text-decoration-none">
+                    Register / Enquire
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card-wh event-card-item p-0 overflow-hidden" style="border-left-color: #3D6B3D;">
+              <div class="event-card-banner hover-sheen">
+                <img src="assets/images/craft_workshop.jpg" alt="Himalayan Eco-Craft Volunteer Drive" loading="lazy">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="event-date-block">
+                    <div style="font-size: 18px; font-weight: 700; line-height: 1;">05</div>
+                    <div style="font-size: 11px; text-transform: uppercase;">NOV</div>
+                  </div>
+                  <div>
+                    <span class="tag-ngo mb-1 d-inline-block">NGO Drive</span>
+                    <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58;">Uttarkashi, UK</div>
+                  </div>
+                </div>
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E; margin-bottom: 0.5rem;">
+                  Himalayan Eco-Craft Volunteer Drive
+                </h3>
+                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; line-height: 1.5; margin-bottom: 1.25rem;">
+                  Join GreenRoots Foundation planting 1,000 oak saplings and assisting rural dye extractors.
+                </p>
+                <div class="mt-auto">
+                  <a href="volunteer.html" class="btn-forest btn-sm w-100 text-center d-block text-decoration-none">
+                    Volunteer Sign-up
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="donate.html#volunteer">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

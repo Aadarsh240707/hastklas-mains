@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or register for your HastKala account as an artisan, partner NGO, or patron supporter.">
+  <title>Login &amp; Register | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Auth Page Wrapper */
+    .auth-page-container {
+      background-color: #FDF8F3;
+      min-height: calc(100vh - 160px);
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Centered Auth Card */
+    .auth-card {
+      max-width: 480px;
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 4rem auto;
+      box-shadow: none;
+    }
+
+    /* Auth Tabs Header */
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid #E8D8C4;
+      margin-bottom: 1.75rem;
+    }
+    .auth-tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #9A7A58;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .auth-tab-btn:hover {
+      color: #C97C3A;
+    }
+    .auth-tab-btn.active {
+      color: #C97C3A;
+      border-bottom: 2px solid #C97C3A;
+      font-weight: 500;
+    }
+
+    /* Headings & Subtitles */
+    .auth-h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #2D1F0E;
+      text-align: center;
+      margin-bottom: 0.35rem;
+    }
+    .auth-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #9A7A58;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Password Input with Show/Hide Toggle */
+    .password-input-wrapper {
+      position: relative;
+    }
+    .password-input-wrapper input {
+      padding-right: 2.75rem !important;
+    }
+    .password-toggle-btn {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #9A7A58;
+      font-size: 16px;
+      padding: 0.2rem;
+      line-height: 1;
+      z-index: 5;
+      transition: color 0.2s ease;
+    }
+    .password-toggle-btn:hover {
+      color: #C97C3A;
+    }
+
+    /* Forgot Password Link */
+    .forgot-password-link {
+      display: block;
+      text-align: right;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #C97C3A;
+      text-decoration: none;
+      margin-top: 0.4rem;
+      transition: opacity 0.2s ease;
+    }
+    .forgot-password-link:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    /* Divider */
+    .auth-divider {
+      text-align: center;
+      color: #9A7A58;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      margin: 1.25rem 0;
+      position: relative;
+    }
+
+    /* Switch to tab links */
+    .switch-tab-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #C97C3A;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .switch-tab-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Role Selector Cards */
+    .role-selector-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2D1F0E;
+      margin-bottom: 0.5rem;
+    }
+    .role-selector-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .role-card {
+      flex: 1;
+      border: 1.5px solid #E8D8C4;
+      border-radius: 10px;
+      padding: 0.75rem 0.25rem;
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2D1F0E;
+      background-color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+    .role-card:hover {
+      border-color: #C97C3A;
+      background-color: #FDF8F3;
+    }
+    .role-card.selected {
+      border-color: #C97C3A;
+      background-color: #FDF0E0;
+      color: #C97C3A;
+      font-weight: 600;
+    }
+
+    /* Inline Validation styling */
+    .field-error-msg {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #B02020;
+      margin-top: 0.3rem;
+      display: none;
+    }
+    .form-wh input.is-invalid,
+    .form-wh select.is-invalid {
+      border-color: #B02020 !important;
+      background-color: #FFF9F9;
+    }
+
+    /* Success Card State */
+    .auth-success-card {
+      background-color: #F0F9F0;
+      border: 1px solid #C8E6C8;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .auth-success-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      color: #3D6B3D;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .auth-success-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #2D1F0E;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Action CTA button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       PAGE CONTENT — CENTERED AUTH CARD ON CREAM BACKGROUND
+       ========================================================================== -->
+  <main class="auth-page-container">
+    <div class="card-wh auth-card p-0 overflow-hidden">
+      
+      <!-- Top Heritage Photo Banner -->
+      <div class="card-img-wrapper hover-sheen" style="height: 125px; border-radius: 12px 12px 0 0;">
+        <img src="assets/images/hero_craft_banner.jpg" alt="HastKala Artisan Collective" class="card-img">
+        <span class="craft-provenance-pill position-absolute" style="bottom: 10px; left: 14px;">Artisan &amp; NGO Portal</span>
+      </div>
+
+      <div class="p-4 p-sm-5 pt-4">
+        <!-- TABS HEADER: "Login" · "Register" -->
+        <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab-btn active" id="loginTabBtn" role="tab" aria-selected="true" aria-controls="loginTabPanel">
+          Login
+        </button>
+        <button type="button" class="auth-tab-btn" id="registerTabBtn" role="tab" aria-selected="false" aria-controls="registerTabPanel">
+          Register
+        </button>
+      </div>
+
+      <!-- ======================================================================
+           TAB 1: LOGIN
+           ====================================================================== -->
+      <div id="loginTabPanel" role="tabpanel" aria-labelledby="loginTabBtn">
+        <h2 class="auth-h2">Welcome back</h2>
+        <p class="auth-sub">Login to your HastKala account.</p>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="form-wh" novalidate>
+          <!-- Email* -->
+          <div class="form-group mb-3">
+            <label for="loginEmail">Email Address <span class="required">*</span></label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="yourname@example.com" required>
+            <div class="field-error-msg" id="loginEmailError">Please enter a valid email address.</div>
+          </div>
+
+          <!-- Password* with show/hide toggle -->
+          <div class="form-group mb-2">
+            <label for="loginPassword">Password <span class="required">*</span></label>
+            <div class="password-input-wrapper">
+              <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+              <button type="button" class="password-toggle-btn" id="loginPasswordToggle" aria-label="Toggle password visibility">
+                <span class="eye-icon"></span>
+              </button>
+            </div>
+            <div class="field-error-msg" id="loginPasswordError">Please enter your password.</div>
+          </div>
+
+          <!-- Forgot Password Link -->
+          <div class="mb-4">
+            <a href="javascript:void(0)" class="forgot-password-link" id="forgotPasswordLink">Forgot password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-amber w-100 py-2" id="loginSubmitBtn">
+            Login
+          </button>
+        </form>
+
+        <!-- Login Success Feedback -->
+        <div id="loginSuccessState" class="auth-success-card d-none mt-3" role="alert">
+          <div class="auth-success-heading"> Welcome back!</div>
+          <p class="auth-success-sub" id="loginSuccessDetails">
+            You are securely logged in. Redirecting to your dashboard...
+          </p>
+          <a href="index.html" class="btn-outline-amber btn-sm">Go to Homepage</a>
+        </div>
+
+        <!-- Divider -->
+        <div class="auth-divider">— or —</div>
+
+        <!-- Switch to Register Link -->
+        <div class="text-center">
+          <a href="javascript:void(0)" class="switch-tab-link" id="switchToRegisterLink">
+            Don't have an account? Register →
+          </a>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           TAB 2: REGISTER
+           ====================================================================== -->
+      <div id="registerTabPanel" class="d-none" role="tabpanel" aria-labelledby="registerTabBtn">
+        <h2 class="auth-h2">Create an account</h2>
+        <p class="auth-sub">Join as an artisan, NGO, or supporter.</p>
+
+        <!-- Role Selector (3 clickable cards, horizontal row) -->
+        <div class="mb-3">
+          <div class="role-selector-title">Select your role <span class="required" style="color: #B02020;">*</span></div>
+          <div class="role-selector-row" id="roleSelectorRow" role="radiogroup" aria-label="Select Account Role">
+            <!--  Artisan -->
+            <div class="role-card" data-role="artisan" role="radio" aria-checked="false" tabindex="0">
+              <span style="font-size: 18px;"></span>
+              <span>Artisan</span>
+            </div>
+            <!--  NGO -->
+            <div class="role-card" data-role="ngo" role="radio" aria-checked="false" tabindex="0">
+              <span style="font-size: 18px;"></span>
+              <span>NGO</span>
+            </div>
+            <!--  Buyer/Donor -->
+            <div class="role-card" data-role="buyer" role="radio" aria-checked="false" tabindex="0">
+              <span style="font-size: 18px;"></span>
+              <span>Buyer/Donor</span>
+            </div>
+          </div>
+          <div class="field-error-msg" id="roleSelectError">Please select an account role.</div>
+        </div>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="form-wh" novalidate>
+          <!-- Full Name* -->
+          <div class="form-group mb-3">
+            <label for="regFullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="regFullName" class="form-control" placeholder="e.g. Meera Devi" required>
+            <div class="field-error-msg" id="regNameError">Please enter your full name.</div>
+          </div>
+
+          <!-- Email* -->
+          <div class="form-group mb-3">
+            <label for="regEmail">Email Address <span class="required">*</span></label>
+            <input type="email" id="regEmail" class="form-control" placeholder="meera@example.com" required>
+            <div class="field-error-msg" id="regEmailError">Please enter a valid email address.</div>
+          </div>
+
+          <!-- Phone* -->
+          <div class="form-group mb-3">
+            <label for="regPhone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+            <div class="field-error-msg" id="regPhoneError">Please enter a valid contact phone number.</div>
+          </div>
+
+          <!-- Password* with show/hide toggle -->
+          <div class="form-group mb-3">
+            <label for="regPassword">Password <span class="required">*</span></label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regPassword" class="form-control" placeholder="Create a strong password" required>
+              <button type="button" class="password-toggle-btn" id="regPasswordToggle" aria-label="Toggle password visibility">
+                <span class="eye-icon"></span>
+              </button>
+            </div>
+            <div class="field-error-msg" id="regPasswordError">Please enter a password with at least 6 characters.</div>
+          </div>
+
+          <!-- Confirm Password* with show/hide toggle -->
+          <div class="form-group mb-3">
+            <label for="regConfirmPassword">Confirm Password <span class="required">*</span></label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-enter password" required>
+              <button type="button" class="password-toggle-btn" id="regConfirmPasswordToggle" aria-label="Toggle password visibility">
+                <span class="eye-icon"></span>
+              </button>
+            </div>
+            <div class="field-error-msg" id="regConfirmPasswordError">Passwords do not match.</div>
+          </div>
+
+          <!-- Terms Checkbox (required) -->
+          <div class="form-group mb-4">
+            <label class="checkbox-label" for="regTerms">
+              <input type="checkbox" id="regTerms" required>
+              <span>I agree to the Terms & Conditions</span>
+            </label>
+            <div class="field-error-msg" id="regTermsError">You must accept the terms and conditions.</div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-amber w-100 py-2" id="regSubmitBtn">
+            Create Account
+          </button>
+        </form>
+
+        <!-- Register Success Card State -->
+        <div id="registerSuccessState" class="auth-success-card d-none mt-3" role="alert">
+          <div class="auth-success-heading" id="regSuccessHeading">
+             Account created! We'll review your profile within 24 hours.
+          </div>
+          <p class="auth-success-sub" id="regSuccessSub">
+            Your verification application has been submitted successfully.
+          </p>
+          <div class="d-flex justify-content-center gap-2">
+            <button type="button" class="btn-outline-amber btn-sm" id="regLoginNowBtn">
+              Proceed to Login
+            </button>
+            <a href="index.html" class="btn-amber btn-sm text-decoration-none">Explore Marketplace</a>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="auth-divider">— or —</div>
+
+        <!-- Switch to Login Link -->
+        <div class="text-center">
+          <a href="javascript:void(0)" class="switch-tab-link" id="switchToLoginLink">
+            Already have an account? Login →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive JavaScript: Tabs, Role Selection, Show/Hide Password, and Validations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // ======================================================================
+      // 1. TAB SWITCHING LOGIC (Login <-> Register)
+      // ======================================================================
+      const loginTabBtn = document.getElementById('loginTabBtn');
+      const registerTabBtn = document.getElementById('registerTabBtn');
+      const loginTabPanel = document.getElementById('loginTabPanel');
+      const registerTabPanel = document.getElementById('registerTabPanel');
+      const switchToRegisterLink = document.getElementById('switchToRegisterLink');
+      const switchToLoginLink = document.getElementById('switchToLoginLink');
+      const regLoginNowBtn = document.getElementById('regLoginNowBtn');
+
+      function switchTab(target) {
+        if (target === 'login') {
+          loginTabBtn.classList.add('active');
+          loginTabBtn.setAttribute('aria-selected', 'true');
+          registerTabBtn.classList.remove('active');
+          registerTabBtn.setAttribute('aria-selected', 'false');
+
+          loginTabPanel.classList.remove('d-none');
+          registerTabPanel.classList.add('d-none');
+        } else {
+          registerTabBtn.classList.add('active');
+          registerTabBtn.setAttribute('aria-selected', 'true');
+          loginTabBtn.classList.remove('active');
+          loginTabBtn.setAttribute('aria-selected', 'false');
+
+          registerTabPanel.classList.remove('d-none');
+          loginTabPanel.classList.add('d-none');
+        }
+      }
+
+      if (loginTabBtn) loginTabBtn.addEventListener('click', () => switchTab('login'));
+      if (registerTabBtn) registerTabBtn.addEventListener('click', () => switchTab('register'));
+      if (switchToRegisterLink) switchToRegisterLink.addEventListener('click', () => switchTab('register'));
+      if (switchToLoginLink) switchToLoginLink.addEventListener('click', () => switchTab('login'));
+      if (regLoginNowBtn) regLoginNowBtn.addEventListener('click', () => switchTab('login'));
+
+      // Check URL hash for direct tab linking (#register)
+      if (window.location.hash === '#register') {
+        switchTab('register');
+      }
+
+      // ======================================================================
+      // 2. SHOW / HIDE PASSWORD TOGGLES
+      // ======================================================================
+      function setupPasswordToggle(buttonId, inputId) {
+        const toggleBtn = document.getElementById(buttonId);
+        const inputEl = document.getElementById(inputId);
+        if (!toggleBtn || !inputEl) return;
+
+        toggleBtn.addEventListener('click', function () {
+          const isPassword = inputEl.getAttribute('type') === 'password';
+          inputEl.setAttribute('type', isPassword ? 'text' : 'password');
+          const eyeSpan = toggleBtn.querySelector('.eye-icon');
+          if (eyeSpan) {
+            eyeSpan.textContent = isPassword ? '' : '';
+          }
+        });
+      }
+
+      setupPasswordToggle('loginPasswordToggle', 'loginPassword');
+      setupPasswordToggle('regPasswordToggle', 'regPassword');
+      setupPasswordToggle('regConfirmPasswordToggle', 'regConfirmPassword');
+
+      // ======================================================================
+      // 3. ROLE SELECTOR LOGIC
+      //  Artisan ·  NGO ·  Buyer/Donor
+      // ======================================================================
+      const roleCards = document.querySelectorAll('.role-card');
+      let selectedRole = null;
+
+      roleCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          roleCards.forEach(c => {
+            c.classList.remove('selected');
+            c.setAttribute('aria-checked', 'false');
+          });
+          this.classList.add('selected');
+          this.setAttribute('aria-checked', 'true');
+          selectedRole = this.getAttribute('data-role');
+          const roleError = document.getElementById('roleSelectError');
+          if (roleError) roleError.style.display = 'none';
+        });
+      });
+
+      // ======================================================================
+      // 4. LOGIN FORM VALIDATION & SUBMISSION
+      // ======================================================================
+      const loginForm = document.getElementById('loginForm');
+      const loginEmail = document.getElementById('loginEmail');
+      const loginPassword = document.getElementById('loginPassword');
+      const loginEmailError = document.getElementById('loginEmailError');
+      const loginPasswordError = document.getElementById('loginPasswordError');
+      const loginSuccessState = document.getElementById('loginSuccessState');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let isLoginValid = true;
+
+          // Email validation
+          if (!loginEmail.value.trim() || !emailRegex.test(loginEmail.value.trim())) {
+            loginEmail.classList.add('is-invalid');
+            if (loginEmailError) loginEmailError.style.display = 'block';
+            isLoginValid = false;
+          } else {
+            loginEmail.classList.remove('is-invalid');
+            if (loginEmailError) loginEmailError.style.display = 'none';
+          }
+
+          // Password validation
+          if (!loginPassword.value.trim()) {
+            loginPassword.classList.add('is-invalid');
+            if (loginPasswordError) loginPasswordError.style.display = 'block';
+            isLoginValid = false;
+          } else {
+            loginPassword.classList.remove('is-invalid');
+            if (loginPasswordError) loginPasswordError.style.display = 'none';
+          }
+
+          if (isLoginValid) {
+            loginForm.classList.add('d-none');
+            loginSuccessState.classList.remove('d-none');
+          }
+        });
+
+        // Clear error on input
+        loginEmail.addEventListener('input', () => {
+          loginEmail.classList.remove('is-invalid');
+          if (loginEmailError) loginEmailError.style.display = 'none';
+        });
+        loginPassword.addEventListener('input', () => {
+          loginPassword.classList.remove('is-invalid');
+          if (loginPasswordError) loginPasswordError.style.display = 'none';
+        });
+      }
+
+      // ======================================================================
+      // 5. REGISTER FORM VALIDATION & SUBMISSION
+      // ======================================================================
+      const registerForm = document.getElementById('registerForm');
+      const regFullName = document.getElementById('regFullName');
+      const regEmail = document.getElementById('regEmail');
+      const regPhone = document.getElementById('regPhone');
+      const regPassword = document.getElementById('regPassword');
+      const regConfirmPassword = document.getElementById('regConfirmPassword');
+      const regTerms = document.getElementById('regTerms');
+
+      const regNameError = document.getElementById('regNameError');
+      const regEmailError = document.getElementById('regEmailError');
+      const regPhoneError = document.getElementById('regPhoneError');
+      const regPasswordError = document.getElementById('regPasswordError');
+      const regConfirmPasswordError = document.getElementById('regConfirmPasswordError');
+      const regTermsError = document.getElementById('regTermsError');
+      const roleSelectError = document.getElementById('roleSelectError');
+
+      const registerSuccessState = document.getElementById('registerSuccessState');
+      const regSuccessHeading = document.getElementById('regSuccessHeading');
+      const regSuccessSub = document.getElementById('regSuccessSub');
+
+      if (registerForm) {
+        registerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let isRegValid = true;
+
+          // Role selection
+          if (!selectedRole) {
+            if (roleSelectError) roleSelectError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            if (roleSelectError) roleSelectError.style.display = 'none';
+          }
+
+          // Full Name
+          if (!regFullName.value.trim()) {
+            regFullName.classList.add('is-invalid');
+            if (regNameError) regNameError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            regFullName.classList.remove('is-invalid');
+            if (regNameError) regNameError.style.display = 'none';
+          }
+
+          // Email
+          if (!regEmail.value.trim() || !emailRegex.test(regEmail.value.trim())) {
+            regEmail.classList.add('is-invalid');
+            if (regEmailError) regEmailError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            regEmail.classList.remove('is-invalid');
+            if (regEmailError) regEmailError.style.display = 'none';
+          }
+
+          // Phone
+          if (!regPhone.value.trim()) {
+            regPhone.classList.add('is-invalid');
+            if (regPhoneError) regPhoneError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            regPhone.classList.remove('is-invalid');
+            if (regPhoneError) regPhoneError.style.display = 'none';
+          }
+
+          // Password
+          if (!regPassword.value || regPassword.value.length < 6) {
+            regPassword.classList.add('is-invalid');
+            if (regPasswordError) regPasswordError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            regPassword.classList.remove('is-invalid');
+            if (regPasswordError) regPasswordError.style.display = 'none';
+          }
+
+          // Confirm Password
+          if (!regConfirmPassword.value || regConfirmPassword.value !== regPassword.value) {
+            regConfirmPassword.classList.add('is-invalid');
+            if (regConfirmPasswordError) {
+              regConfirmPasswordError.textContent = regConfirmPassword.value ? 'Passwords do not match.' : 'Please confirm your password.';
+              regConfirmPasswordError.style.display = 'block';
+            }
+            isRegValid = false;
+          } else {
+            regConfirmPassword.classList.remove('is-invalid');
+            if (regConfirmPasswordError) regConfirmPasswordError.style.display = 'none';
+          }
+
+          // Terms Checkbox
+          if (!regTerms.checked) {
+            if (regTermsError) regTermsError.style.display = 'block';
+            isRegValid = false;
+          } else {
+            if (regTermsError) regTermsError.style.display = 'none';
+          }
+
+          // If Valid, show customized success message based on selected role
+          if (isRegValid) {
+            registerForm.classList.add('d-none');
+            
+            if (selectedRole === 'artisan' || selectedRole === 'ngo') {
+              regSuccessHeading.textContent = " Account created! We'll review your profile within 24 hours.";
+              regSuccessSub.textContent = "Our community verification team has received your registration details. We will notify you via email and SMS once approved.";
+            } else {
+              regSuccessHeading.textContent = "✅ Welcome! You can now browse and shop.";
+              regSuccessSub.textContent = "Your buyer and supporter account is active immediately. You can now support artisans and make direct donations.";
+            }
+
+            registerSuccessState.classList.remove('d-none');
+          }
+        });
+
+        // Real-time error removals on typing
+        [regFullName, regEmail, regPhone, regPassword, regConfirmPassword].forEach(function (el) {
+          el.addEventListener('input', function () {
+            this.classList.remove('is-invalid');
+            const err = document.getElementById(this.id + 'Error');
+            if (err) err.style.display = 'none';
+          });
+        });
+
+        regTerms.addEventListener('change', function () {
+          if (this.checked && regTermsError) regTermsError.style.display = 'none';
+        });
+      }
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

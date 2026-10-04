@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the story behind HastKala — an academic field project turned digital platform bridging Indian artisans, grassroots NGOs, and conscious patrons.">
+  <title>About Us | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Section 1: Hero */
+    .about-hero {
+      background: linear-gradient(135deg, #2D1F0E 0%, #7A4520 100%);
+      height: 280px;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .badge-story {
+      display: inline-block;
+      background-color: #FDF0E0;
+      color: #B06820;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    .about-hero-h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .about-hero-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Section 2: Mission Statement */
+    .mission-section {
+      background-color: #FFFFFF;
+      padding: 3rem 0;
+    }
+    .mission-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #7A4520;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .mission-body-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: #2D1F0E;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Section 3: Who We Serve */
+    .serve-section {
+      background-color: #FDF8F3;
+      padding: 3rem 0;
+    }
+    .serve-card {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      overflow: hidden;
+      padding: 2rem 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: none;
+    }
+    .top-bar-artisan {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #C97C3A;
+    }
+    .top-bar-ngo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #3D6B3D;
+    }
+    .top-bar-buyer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #F5C874;
+    }
+    .serve-icon {
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .serve-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2D1F0E;
+      margin-bottom: 0.5rem;
+    }
+    .serve-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #9A7A58;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .serve-stat-badge {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .stat-badge-artisan {
+      background-color: #FDF0E0;
+      color: #B06820;
+    }
+    .stat-badge-ngo {
+      background-color: #E8F5E8;
+      color: #3D6B3D;
+    }
+    .stat-badge-buyer {
+      background-color: #FFF8E7;
+      color: #B8860B;
+    }
+
+    /* Section 4: Problem We Solve */
+    .problem-section {
+      background-color: #FFFFFF;
+      padding: 3rem 0;
+    }
+    .comparison-card {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      padding: 2rem;
+      height: 100%;
+    }
+    .problem-head {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #7A4520;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #E8D8C4;
+    }
+    .solution-head {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #3D6B3D;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #E8D8C4;
+    }
+    .comparison-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .comparison-item {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #2D1F0E;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    /* Section 5: Team / Project Info */
+    .project-section {
+      background-color: #FDF8F3;
+      padding: 2.5rem 0;
+    }
+    .project-card {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      padding: 1.75rem;
+      height: 100%;
+      box-shadow: none;
+    }
+    .project-icon {
+      font-size: 32px;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+    .project-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #2D1F0E;
+      margin-bottom: 0.4rem;
+    }
+    .project-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: #9A7A58;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Action CTA button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — HERO
+         Gradient #2D1F0E → #7A4520, height 280px, Badge "Our Story"
+         H1 Playfair 40px white "Built for India's Artisans & NGOs"
+         Sub rgba white .8: "A platform born from belief — that handmade deserves a home."
+         ========================================================================== -->
+    <section class="about-hero" aria-label="About HastKala Hero">
+      <div class="container">
+        <span class="badge-story">Our Story</span>
+        <h1 class="about-hero-h1">Built for India's Artisans & NGOs</h1>
+        <p class="about-hero-sub">
+          A platform born from belief — that handmade deserves a home.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — MISSION STATEMENT
+         Background white, padding 3rem 0, Centered, max-width 700px
+         Playfair italic 22px #7A4520 (quote style)
+         DM Sans 15px body text (3 lines about college field project turned real platform)
+         ========================================================================== -->
+    <section class="mission-section" aria-label="Mission Statement">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto;">
+          <blockquote class="mission-quote">
+            “We believe every artisan's story deserves to be told, and every NGO's cause deserves to be heard.”
+          </blockquote>
+          <p class="mission-body-text">
+            What originated as an undergraduate academic field project at Thakur Shyam Narayan Degree College has grown into a living, community-driven digital bridge. We observed first-hand how rural artisans struggled with mediator exploitation and how impactful local NGOs lacked online visibility. HastKala was created to replace middlemen with direct connection, authentic storytelling, and fair empowerment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Story Feature with Real Craft Photography -->
+    <section style="background-color: #FFFFFF; padding: 1.5rem 0 3.5rem; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <div class="position-relative">
+              <div class="card-img-wrapper hover-sheen" style="height: 330px; border-radius: 16px;">
+                <img src="assets/images/craft_story.jpg" alt="Artisan storytelling workshop" class="card-img" loading="lazy">
+              </div>
+              <div class="position-absolute animate-float" style="bottom: -15px; right: 20px; background: rgba(253, 248, 243, 0.96); backdrop-filter: blur(8px); padding: 10px 20px; border-radius: 30px; border: 1px solid #E8D8C4; box-shadow: 0 8px 24px rgba(45,31,14,0.15);">
+                <span style="color: #C97C3A; font-weight: 600; font-size: 13px;">✦ 100% Direct Artisan Earnings</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="ps-lg-3">
+              <span class="tag-artisan mb-2 d-inline-block animate-float">Living Heritage</span>
+              <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 600; color: #2D1F0E; margin-bottom: 1rem; line-height: 1.3;">
+                Preserving Generational Artistry for Modern Patrons
+              </h2>
+              <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #755636; line-height: 1.8; margin-bottom: 1.5rem;">
+                Every handloom weave, terracotta vessel, and brass figurine carried on HastKala represents centuries of community knowledge. By eliminating exploitative intermediaries, we ensure over 85% of retail value flows directly to the creators and their community self-help groups.
+              </p>
+              <div class="d-flex flex-wrap gap-4 pt-1">
+                <div class="border-start ps-3" style="border-left-color: #C97C3A !important; border-left-width: 3px !important;">
+                  <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #C97C3A;" class="counter-val" data-target="200" data-suffix="+">200+</div>
+                  <div style="font-size: 12px; color: #755636; font-weight: 500;">Artisans Supported</div>
+                </div>
+                <div class="border-start ps-3" style="border-left-color: #3D6B3D !important; border-left-width: 3px !important;">
+                  <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #3D6B3D;" class="counter-val" data-target="30" data-suffix="+">30+</div>
+                  <div style="font-size: 12px; color: #755636; font-weight: 500;">Partner NGOs</div>
+                </div>
+                <div class="border-start ps-3" style="border-left-color: #7A4520 !important; border-left-width: 3px !important;">
+                  <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #7A4520;" class="counter-val" data-target="15" data-suffix=" States">15 States</div>
+                  <div style="font-size: 12px; color: #755636; font-weight: 500;">Craft Provenance</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — WHO WE SERVE
+         ========================================================================== -->
+    <section class="serve-section" aria-label="Who We Serve">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 500; color: #2D1F0E;">
+            Who We Serve
+          </h2>
+          <div class="divider-line" style="width: 60px; height: 3px; background-color: #C97C3A; margin: 0.75rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1: Artisans -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh serve-card hover-sheen">
+              <div class="top-bar-artisan" style="height: 6px; background-color: #C97C3A;"></div>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="assets/images/pottery_artisan.jpg" alt="Artisan portrait" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #C97C3A;">
+                <h3 class="serve-title mb-0">Artisans</h3>
+              </div>
+              <p class="serve-desc">
+                Traditional craftspeople preserving India's heritage arts through pottery, handloom textiles, wood carving, and metalwork.
+              </p>
+              <div class="mt-auto">
+                <span class="serve-stat-badge stat-badge-artisan counter-val" data-target="200" data-suffix="+ on platform">200+ on platform</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: NGOs -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh serve-card hover-sheen">
+              <div class="top-bar-ngo" style="height: 6px; background-color: #3D6B3D;"></div>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="assets/images/ngo_vikas.jpg" alt="NGO field worker" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #3D6B3D;">
+                <h3 class="serve-title mb-0">NGOs</h3>
+              </div>
+              <p class="serve-desc">
+                Grassroots non-profits driving social impact, skill development, environmental conservation, and artisan livelihood support.
+              </p>
+              <div class="mt-auto">
+                <span class="serve-stat-badge stat-badge-ngo counter-val" data-target="30" data-suffix="+ verified NGOs">30+ verified NGOs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Buyers/Donors -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh serve-card hover-sheen">
+              <div class="top-bar-buyer" style="height: 6px; background-color: #F5C874;"></div>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="assets/images/kutchi_clutch.jpg" alt="Handcrafted product" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #F5C874;">
+                <h3 class="serve-title mb-0">Buyers &amp; Donors</h3>
+              </div>
+              <p class="serve-desc">
+                Conscious patrons who value authentic handmade heritage products and seek transparent avenues for direct charitable giving.
+              </p>
+              <div class="mt-auto">
+                <span class="serve-stat-badge stat-badge-buyer counter-val" data-target="5000" data-suffix="+ happy patrons">5000+ happy patrons</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4 — THE PROBLEM WE SOLVE
+         Background white, padding 3rem 0, H2 Playfair "The Problem We Solve"
+         Bootstrap row (col-md-6 + col-md-6): 4 ❌ problems, 4 ✅ solutions
+         ========================================================================== -->
+    <section class="problem-section" aria-label="The Problem We Solve">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 500; color: #2D1F0E;">
+            The Problem We Solve
+          </h2>
+          <div class="divider-line" style="width: 60px; height: 3px; background-color: #C97C3A; margin: 0.75rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Left Column: Before HastKala -->
+          <div class="col-12 col-md-6">
+            <div class="comparison-card" style="background-color: #FFF9F7;">
+              <h3 class="problem-head">Before HastKala</h3>
+              <ul class="comparison-list">
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">❌</span>
+                  <span>Middlemen taking up to 70% of artisan profits, leaving creators underpaid.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">❌</span>
+                  <span>Rural craft clusters isolated from nationwide digital marketplace consumers.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">❌</span>
+                  <span>Grassroots NGOs struggling with high fundraising costs and opaque distribution.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">❌</span>
+                  <span>Buyers unable to verify genuine artisan provenance versus factory imitations.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: With HastKala -->
+          <div class="col-12 col-md-6">
+            <div class="comparison-card" style="background-color: #F8FBF8;">
+              <h3 class="solution-head">With HastKala</h3>
+              <ul class="comparison-list">
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">✅</span>
+                  <span>100% direct remuneration straight to artisans with zero mediator cuts or hidden deductions.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">✅</span>
+                  <span>Modern digital catalog and storytelling profiles showcasing rural mastery to India and beyond.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">✅</span>
+                  <span>Zero-commission donation processing with transparent impact cards and direct volunteer signups.</span>
+                </li>
+                <li class="comparison-item">
+                  <span style="font-size: 16px;">✅</span>
+                  <span>Certified artisan profiles, craft backgrounds, and direct enquiry channels ensuring authentic heritage.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5 — TEAM / PROJECT INFO
+         Background #FDF8F3, padding 2.5rem 0, H2 Playfair "The Project"
+         3-column grid, 3 cards (.card-wh)
+         ========================================================================== -->
+    <section class="project-section" aria-label="Project and Academic Background">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="section-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 500; color: #2D1F0E;">
+            The Project
+          </h2>
+          <div class="divider-line" style="width: 60px; height: 3px; background-color: #C97C3A; margin: 0.75rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1: Academic -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh project-card hover-sheen">
+              <div class="project-icon">🎓</div>
+              <h3 class="project-title">Academic Roots</h3>
+              <p class="project-desc">
+                Conceived as an applied community field project at <strong>Thakur Shyam Narayan Degree College</strong>, studying direct socio-economic impacts on artisan livelihoods.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Open Source -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh project-card hover-sheen">
+              <div class="project-icon">💻</div>
+              <h3 class="project-title">Open Source Foundation</h3>
+              <p class="project-desc">
+                Crafted purely with accessible open-source web standards: HTML5, CSS3, Bootstrap 5, and vanilla JavaScript for universal cross-device accessibility.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Free Deployment -->
+          <div class="col-12 col-md-4">
+            <div class="card-wh project-card hover-sheen">
+              <div class="project-icon">🚀</div>
+              <h3 class="project-title">Free Deployment</h3>
+              <p class="project-desc">
+                Deployed on <strong>Vercel</strong> with modern edge infrastructure at zero hosting cost, proving sustainable scalability for mission-driven non-profits.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6 — CTA BANNER (Same as home page section 8)
+         "Join HastKala today" gradient banner with Register buttons
+         ========================================================================== -->
+    <section class="section-wh py-5" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="cta-banner-wh">
+          <h2>Join HastKala today</h2>
+          <p>Whether you create, support, or shop — there's a place for you.</p>
+          <div class="cta-actions">
+            <a href="login.html#register" class="btn-amber text-decoration-none">Register as artisan</a>
+            <a href="login.html#register" class="btn-forest text-decoration-none">Register as NGO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

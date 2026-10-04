@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SNIPPET 1: FULL <head> BLOCK (HastKala — Warm Heritage)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HastKala — Empowering traditional Indian artisans and grassroots NGOs through direct digital visibility, authentic craft storytelling, and sustainable patronage.">
+  <title>Home | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SNIPPET 2: NAVBAR HTML (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Action -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1: HERO
+         ========================================================================== -->
+    <section class="hero-wh">
+      <div class="container position-relative">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-lg-7 position-relative z-2">
+            <!-- Top-left: small badge pill -->
+            <div class="hero-badge animate-float">
+              <span>India's Craft Heritage · Direct from Artisans</span>
+            </div>
+            <!-- H1 Playfair Display 48px -->
+            <h1 class="hero-title">
+              Connecting <span style="color:#F5C874">artisans</span> &amp; NGOs<br>with the world
+            </h1>
+            <!-- Subtext 16px rgba white .8 -->
+            <p class="hero-subtext">
+              Buy handmade, support causes, and give Indian craft the audience it deserves.
+            </p>
+            <!-- Two action buttons -->
+            <div class="hero-actions">
+              <a href="artisans.html" class="btn-amber">Explore artisans</a>
+              <a href="ngos.html" class="btn-outline">Support an NGO</a>
+            </div>
+          </div>
+
+          <!-- Right side: Hero Photo Mosaic with Floating Badge -->
+          <div class="col-12 col-lg-5 d-none d-lg-block">
+            <div class="hero-photo-mosaic">
+              <img src="assets/images/hero_craft_banner.jpg" alt="Indian craft workshop" class="mosaic-img-main">
+              <img src="assets/images/craft_workshop.jpg" alt="Weaver in village cluster" class="mosaic-img-sub">
+              <div class="mosaic-badge animate-float">
+                <span>🏺</span> 200+ Master Artisans · Direct Fair Trade
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: TRUST BAR
+         ========================================================================== -->
+    <div class="trust-bar">
+      <div class="container d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center flex-wrap gap-2 gap-md-3">
+          <span>✦ <span class="counter-val" data-target="200" data-suffix="+">200+</span> Artisans</span>
+          <span class="separator">·</span>
+          <span><span class="counter-val" data-target="30" data-suffix="+">30+</span> NGOs</span>
+          <span class="separator">·</span>
+          <span><span class="counter-val" data-target="15" data-suffix=" States">15 States</span></span>
+          <span class="separator">·</span>
+          <span><span class="counter-val" data-target="5000" data-suffix="+">5000+</span> Products</span>
+        </div>
+        <div>
+          <a href="products.html" class="trust-link">See all →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 3: FEATURED ARTISANS (Cream Background)
+         ========================================================================== -->
+    <section class="section-wh" id="featured-artisans">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Meet Our Artisans</h2>
+          <p class="section-sub">Skilled hands, authentic stories.</p>
+        </div>
+
+        <!-- Horizontal scrollable row on mobile; 4-column Bootstrap grid on desktop -->
+        <div class="row g-4 horizontal-scroll-mobile">
+          <!-- Artisan Card 1 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper">
+                <img src="assets/images/pottery_artisan.jpg" alt="Rameshwar Prajapati - Master Potter" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Terracotta · Rajasthan</span>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-artisan">Master Artisan</span>
+                </div>
+                <h3 class="card-title">Rameshwar Prajapati</h3>
+                <p class="card-sub">Terracotta Pottery · Rajasthan</p>
+                <div class="card-action mt-auto">
+                  <a href="artisans.html" class="text-amber fw-medium text-decoration-none">View profile →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artisan Card 2 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper">
+                <img src="assets/images/weaving_artisan.jpg" alt="Anandi Devi - Heritage Weaver" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Handloom · Madhya Pradesh</span>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-artisan">Heritage Weaver</span>
+                </div>
+                <h3 class="card-title">Anandi Devi</h3>
+                <p class="card-sub">Maheshwari Silk Weaving · Madhya Pradesh</p>
+                <div class="card-action mt-auto">
+                  <a href="artisans.html" class="text-amber fw-medium text-decoration-none">View profile →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artisan Card 3 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper hover-sheen">
+                <img src="assets/images/artisan_gopal.jpg" alt="Devendra Kumhar - Master Potter" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Clay &amp; Terracotta · MP</span>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-artisan">Craft Guild</span>
+                </div>
+                <h3 class="card-title">Devendra Kumhar</h3>
+                <p class="card-sub">Dhak &amp; Clay Instruments · MP</p>
+                <div class="card-action mt-auto">
+                  <a href="artisans.html" class="text-amber fw-medium text-decoration-none">View profile →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artisan Card 4 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper hover-sheen">
+                <img src="assets/images/woollen_shawl.jpg" alt="Hand-spun Woollen Shawl" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Pure Handloom</span>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="tag-product">Handloom</span>
+                  <span class="card-price">₹2,450</span>
+                </div>
+                <h3 class="card-title">Hand-spun Woollen Shawl</h3>
+                <p class="card-sub mb-3" style="font-size: 12px;">By Anandi Devi · Madhya Pradesh</p>
+                <div class="card-action mt-auto">
+                  <a href="contact.html" class="btn-amber btn-sm btn-block w-100">Enquire</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper hover-sheen">
+                <img src="assets/images/clay_planter.jpg" alt="Handmade Clay Planter" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Natural Terracotta</span>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="tag-product">Terracotta</span>
+                  <span class="card-price">₹680</span>
+                </div>
+                <h3 class="card-title">Handmade Clay Planter</h3>
+                <p class="card-sub mb-3" style="font-size: 12px;">By Rameshwar Prajapati · Rajasthan</p>
+                <div class="card-action mt-auto">
+                  <a href="contact.html" class="btn-amber btn-sm btn-block w-100">Enquire</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper hover-sheen">
+                <img src="assets/images/blue_pottery_vase.jpg" alt="Glazed Earthen Ceramic Urn" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Ceramic Glaze</span>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="tag-product">Traditional</span>
+                  <span class="card-price">₹1,200</span>
+                </div>
+                <h3 class="card-title">Glazed Earthen Urn</h3>
+                <p class="card-sub mb-3" style="font-size: 12px;">By Riya Patel · Rajasthan</p>
+                <div class="card-action mt-auto">
+                  <a href="contact.html" class="btn-amber btn-sm btn-block w-100">Enquire</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="col-md-3">
+            <article class="card-wh">
+              <div class="card-img-wrapper hover-sheen">
+                <img src="assets/images/wooden_lacquer_toys.jpg" alt="Sawantwadi Wooden Lacquer Toys" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Teak Woodcraft</span>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="tag-product">Woodcraft</span>
+                  <span class="card-price">₹850</span>
+                </div>
+                <h3 class="card-title">Carved Protective Amulet</h3>
+                <p class="card-sub mb-3" style="font-size: 12px;">By Vasantrao Shinde · Maharashtra</p>
+                <div class="card-action mt-auto">
+                  <a href="contact.html" class="btn-amber btn-sm btn-block w-100">Enquire</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Browse all products button centered below -->
+        <div class="text-center mt-5">
+          <a href="products.html" class="btn-outline-amber">Browse all products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: FEATURED NGOs (Cream Background)
+         ========================================================================== -->
+    <section class="section-wh" id="featured-ngos">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">NGOs Making a Difference</h2>
+          <p class="section-sub">Support a cause close to your heart.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- NGO Card 1 -->
+          <div class="col-md-4">
+            <article class="card-wh overflow-hidden">
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_vikas.jpg" alt="Sahaj Seva Foundation" loading="lazy">
+                <div class="ngo-card-avatar-pill">SS · Maharashtra</div>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-ngo">Verified NGO</span>
+                </div>
+                <h3 class="card-title">Sahaj Seva Foundation</h3>
+                <p class="card-sub mb-2" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  Empowering rural craftswomen with fair wages, healthcare, and children's education.
+                </p>
+                <p class="card-sub mb-4" style="font-size: 12px;">Vasai, Maharashtra</p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="ngos.html" class="btn-outline-amber btn-sm flex-grow-1">Visit NGO</a>
+                  <a href="donate.html" class="btn-forest btn-sm flex-grow-1">Donate</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- NGO Card 2 -->
+          <div class="col-md-4">
+            <article class="card-wh overflow-hidden">
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_bunkaar.jpg" alt="Prerna Rural Trust" loading="lazy">
+                <div class="ngo-card-avatar-pill">PR · Jharkhand</div>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-ngo">80G Exempt</span>
+                </div>
+                <h3 class="card-title">Prerna Rural Trust</h3>
+                <p class="card-sub mb-2" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  Reviving indigenous tribal bamboo crafts and providing sustainable national market linkages.
+                </p>
+                <p class="card-sub mb-4" style="font-size: 12px;">Ranchi, Jharkhand</p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="ngos.html" class="btn-outline-amber btn-sm flex-grow-1">Visit NGO</a>
+                  <a href="donate.html" class="btn-forest btn-sm flex-grow-1">Donate</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- NGO Card 3 -->
+          <div class="col-md-4">
+            <article class="card-wh overflow-hidden">
+              <div class="ngo-card-banner hover-sheen">
+                <img src="assets/images/ngo_kalarakshak.jpg" alt="Koshish Welfare Society" loading="lazy">
+                <div class="ngo-card-avatar-pill">KW · Rajasthan</div>
+              </div>
+              <div class="card-body">
+                <div class="card-tag-wrapper">
+                  <span class="tag-ngo">Community Impact</span>
+                </div>
+                <h3 class="card-title">Koshish Welfare Society</h3>
+                <p class="card-sub mb-2" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  Providing free vocational artisan education and emergency micro-grants for marginalized potters.
+                </p>
+                <p class="card-sub mb-4" style="font-size: 12px;">Jaipur, Rajasthan</p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="ngos.html" class="btn-outline-amber btn-sm flex-grow-1">Visit NGO</a>
+                  <a href="donate.html" class="btn-forest btn-sm flex-grow-1">Donate</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- View all NGOs button centered below -->
+        <div class="text-center mt-5">
+          <a href="ngos.html" class="btn-outline-amber">View all NGOs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: UPCOMING EVENTS (White Background)
+         ========================================================================== -->
+    <section class="section-wh alt" id="upcoming-events">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Upcoming Events</h2>
+          <p class="section-sub">Experience the crafts live and meet master creators in person.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Event Card 1 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <div class="event-date-block">
+                <span class="event-day">14</span>
+                <span class="event-month">OCT</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title">Heritage Khadi &amp; Handloom Expo</h3>
+                <div class="event-ngo">Sahaj Seva Foundation</div>
+                <div class="event-location">Mumbai Exhibition Center</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <div class="event-date-block">
+                <span class="event-day">22</span>
+                <span class="event-month">OCT</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title">Live Clay Pottery Workshop</h3>
+                <div class="event-ngo">Koshish Welfare Society</div>
+                <div class="event-location">Dilli Haat, New Delhi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <div class="event-date-block">
+                <span class="event-day">05</span>
+                <span class="event-month">NOV</span>
+              </div>
+              <div class="event-details">
+                <h3 class="event-title">Tribal Bamboo Craft Bazaar</h3>
+                <div class="event-ngo">Prerna Rural Trust</div>
+                <div class="event-location">Shilparamam, Hyderabad</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: HOW IT WORKS (Cream Background)
+         ========================================================================== -->
+    <section class="section-wh" id="how-it-works">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-sub">Three simple steps to connect, showcase, and thrive together.</p>
+        </div>
+
+        <div class="row g-4 how-it-works-row">
+          <!-- Step 1 -->
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-circle">01</div>
+              <h3 class="step-title">Register</h3>
+              <p class="step-desc">Sign up as an artisan, NGO, or buyer — free.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-circle">02</div>
+              <h3 class="step-title">Get approved</h3>
+              <p class="step-desc">Admin reviews your profile within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-4">
+            <div class="step-card">
+              <div class="step-circle">03</div>
+              <h3 class="step-title">Reach the world</h3>
+              <p class="step-desc">Showcase products, list events, receive donations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 8: CTA BANNER
+         ========================================================================== -->
+    <section class="section-wh pt-0">
+      <div class="container">
+        <div class="cta-banner-wh">
+          <h2>Join HastKala today</h2>
+          <p>Whether you create, support, or shop — there's a place for you.</p>
+          <div class="cta-actions">
+            <a href="register.html?role=artisan" class="btn-amber">Register as artisan</a>
+            <a href="register.html?role=ngo" class="btn-forest">Register as NGO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SNIPPET 3: FOOTER HTML (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Explore Links -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Support Links -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: About Links -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (place right before   <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

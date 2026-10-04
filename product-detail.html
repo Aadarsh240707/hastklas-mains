@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Handcrafted Jaipur Blue Pottery Vase by master artisan Riya Patel. 100% authentic, lead-free decorative earthenware on HastKala.">
+  <title>Blue Pottery Vase | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Product Detail Specific Styles */
+    .gallery-main-box {
+      height: 420px;
+      background-color: #FDF0E0;
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+    .gallery-main-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-main-box:hover img {
+      transform: scale(1.03);
+    }
+    .gallery-thumb-box {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #E8D8C4;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      background-color: #FDF0E0;
+    }
+    .gallery-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-thumb-box:hover {
+      border-color: #C97C3A;
+      transform: translateY(-2px);
+    }
+    .gallery-thumb-box.active {
+      border: 2.5px solid #C97C3A;
+      box-shadow: 0 0 0 2px rgba(201, 124, 58, 0.25);
+    }
+    .star-rating {
+      color: #C97C3A;
+      letter-spacing: 2px;
+      font-size: 15px;
+    }
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #E8D8C4;
+      border-radius: 8px;
+      background-color: #FFFFFF;
+      overflow: hidden;
+    }
+    .qty-btn {
+      background: transparent;
+      border: none;
+      color: #C97C3A;
+      font-size: 18px;
+      font-weight: 600;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .qty-btn:hover {
+      background-color: #FDF8F3;
+    }
+    .qty-display {
+      width: 44px;
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #2D1F0E;
+      border: none;
+      outline: none;
+    }
+    .assurance-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #7A4520;
+    }
+    .modal-content-wh {
+      border: 1px solid #E8D8C4;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(45, 31, 14, 0.15);
+    }
+    .modal-header-wh {
+      border-bottom: 1px solid #E8D8C4;
+      padding: 1.25rem 1.5rem;
+    }
+    .modal-title-wh {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2D1F0E;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — BREADCRUMB
+         - 12px, color #9A7A58: Home › Shop › Pottery › Blue Pottery Vase
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 1.25rem 0 0.5rem; border-bottom: 1px solid #FAF4ED;">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+            <li class="breadcrumb-item"><a href="index.html" style="color: #9A7A58; text-decoration: none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color: #9A7A58; text-decoration: none;">Shop</a></li>
+            <li class="breadcrumb-item"><a href="products.html?category=Pottery" style="color: #9A7A58; text-decoration: none;">Pottery</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #2D1F0E; font-weight: 500;">Blue Pottery Vase</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — PRODUCT DETAIL LAYOUT
+         - Bootstrap row (col-md-6 + col-md-6), padding 3rem 0, bg white
+         - LEFT COL — image gallery area:
+           Main image box: 380px height, bg #FDF0E0, centered emoji 72px, rounded 12px
+           Thumbnail row below: 4 smaller boxes 80px each (same style, different emoji/color), clickable to "change" main
+         - RIGHT COL — product info:
+           .tag-product badge
+           Product name: Playfair 32px/500, color #2D1F0E
+           Artisan: "By Riya Patel, Rajasthan" — 14px, #C97C3A, links to artisan-profile.html
+           Rating row: ★★★★☆ (CSS stars, amber color) + "(42 reviews)" 12px muted
+           Price: ₹1,200 — 28px/500 #C97C3A
+           Stock: "✅ In Stock — 8 remaining" 13px green
+           Divider line
+           Description heading (Playfair 18px): "About this piece"
+           Description text (15px, 3–4 lines, #2D1F0E)
+           Material: "Clay, natural dyes" — 13px label #9A7A58
+           Dimensions: "18cm × 12cm" — 13px
+           Divider
+           Quantity selector: − 1 + (styled with #E8D8C4 borders, amber text for −/+)
+           Two CTA buttons: "Place Order" btn-amber + "Send Enquiry" btn-outline-amber
+           Assurance row:  Direct from artisan ·  Ships in 5–7 days ·  Easy returns
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 2.5rem 0 3.5rem;">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+          <!-- LEFT COL — Image Gallery Area -->
+          <div class="col-12 col-md-6">
+            <!-- Main Image Box -->
+            <div id="mainImageBox" class="gallery-main-box mb-3" aria-label="Main Blue Pottery Vase display">
+              <img id="mainProductImage" src="assets/images/blue_pottery_vase.jpg" alt="Jaipur Blue Pottery Ceramic Vase">
+            </div>
+
+            <!-- Thumbnail Row Below -->
+            <div class="d-flex flex-wrap gap-2 justify-content-start" id="thumbnailRow">
+              <div class="gallery-thumb-box active" data-img="assets/images/blue_pottery_vase.jpg" title="Front Perspective">
+                <img src="assets/images/blue_pottery_vase.jpg" alt="Front Perspective">
+              </div>
+              <div class="gallery-thumb-box" data-img="assets/images/clay_planter.jpg" title="Glaze & Motifs Detail">
+                <img src="assets/images/clay_planter.jpg" alt="Glaze & Motifs Detail">
+              </div>
+              <div class="gallery-thumb-box" data-img="assets/images/terracotta_table_lamp.jpg" title="Ambient Perspective">
+                <img src="assets/images/terracotta_table_lamp.jpg" alt="Ambient Perspective">
+              </div>
+              <div class="gallery-thumb-box" data-img="assets/images/terracotta_matka.jpg" title="Handcrafted Clay Form">
+                <img src="assets/images/terracotta_matka.jpg" alt="Handcrafted Clay Form">
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COL — Product Info -->
+          <div class="col-12 col-md-6">
+            <!-- Badge -->
+            <div class="mb-2">
+              <span class="tag-product" style="background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px;">
+                Pottery
+              </span>
+            </div>
+
+            <!-- Product Name -->
+            <h1 class="mb-2" style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 500; color: #2D1F0E; line-height: 1.25;">
+              Blue Pottery Vase
+            </h1>
+
+            <!-- Artisan Link -->
+            <div class="mb-2">
+              <a href="artisan-profile.html" style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #C97C3A; font-weight: 500; text-decoration: none;">
+                By Riya Patel, Rajasthan
+              </a>
+            </div>
+
+            <!-- Rating Row -->
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="star-rating" aria-label="4 out of 5 stars">★★★★☆</span>
+              <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                (42 reviews)
+              </span>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 500; color: #C97C3A;">
+              ₹1,200
+            </div>
+
+            <!-- Stock Status -->
+            <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #3D6B3D; font-weight: 500;">
+              ✅ In Stock — 8 remaining
+            </div>
+
+            <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 1.25rem 0;">
+
+            <!-- Description Heading -->
+            <h2 class="mb-2" style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: #2D1F0E;">
+              About this piece
+            </h2>
+
+            <!-- Description Text -->
+            <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.7;">
+              Hand-painted in Jaipur using quartz stone powder, raw glass, and natural multani mitti, this decorative Blue Pottery vase features Persian-inspired floral arabesques and cobalt mineral pigment detailing. Fired at low temperatures, each piece is distinct, lead-free, and retains a luminous semi-matte finish that enriches any living space.
+            </p>
+
+            <!-- Attributes: Material & Dimensions -->
+            <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #2D1F0E;">
+              <span style="color: #9A7A58; font-weight: 500;">Material:</span> Clay, natural dyes
+            </div>
+            <div class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #2D1F0E;">
+              <span style="color: #9A7A58; font-weight: 500;">Dimensions:</span> 18cm × 12cm
+            </div>
+
+            <hr style="border-top: 1px solid #E8D8C4; opacity: 1; margin: 1.25rem 0;">
+
+            <!-- Quantity Selector & Action Buttons -->
+            <div class="d-flex flex-column gap-3 mb-4">
+              <!-- Quantity Selector -->
+              <div class="d-flex align-items-center gap-3">
+                <span style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2D1F0E;">Quantity:</span>
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+                  <input type="text" class="qty-display" id="qtyInput" value="1" readonly aria-label="Selected quantity">
+                  <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+
+              <!-- Two CTA Buttons -->
+              <div class="row g-2 pt-1">
+                <div class="col-12 col-sm-6">
+                  <button type="button" class="btn-amber w-100 py-2 text-center" id="openOrderModalBtn" data-bs-toggle="modal" data-bs-target="#orderModal" style="font-size: 15px;">
+                    Place Order
+                  </button>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <button type="button" class="btn-outline-amber w-100 py-2 text-center" id="openEnquiryModalBtn" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="font-size: 15px;">
+                    Send Enquiry
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Assurance Row -->
+            <div class="p-3" style="background-color: #FDF8F3; border: 1px solid #E8D8C4; border-radius: 8px;">
+              <div class="assurance-badge text-center text-sm-start">
+                 Direct from artisan &nbsp;·&nbsp;  Ships in 5–7 days &nbsp;·&nbsp;  Easy returns
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3 — PRODUCT STORY
+         - Background #FDF8F3, padding 2.5rem 0
+         - H2 Playfair "The Story Behind This Piece"
+         - 2-column Bootstrap row: left = story text (Playfair italic intro + DM Sans body); right = artisan mini-card (.card-wh)
+         ========================================================================== -->
+    <section style="background-color: #FDF8F3; padding: 2.5rem 0; border-top: 1px solid #E8D8C4; border-bottom: 1px solid #E8D8C4;">
+      <div class="container">
+        <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          The Story Behind This Piece
+        </h2>
+
+        <div class="row g-4 align-items-center">
+          <!-- Left: Story Text -->
+          <div class="col-12 col-md-7 col-lg-8">
+            <p style="font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: #7A4520; line-height: 1.6; margin-bottom: 1rem;">
+              “Every swirl of cobalt is painted by hand without stencils or tracing — an art passed from mother to daughter across generations in Kot Jewar.”
+            </p>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #2D1F0E; line-height: 1.8; margin-bottom: 0;">
+              Jaipur blue pottery is uniquely distinguished because it is the only pottery tradition in the world crafted entirely without clay. The dough is formulated using crushed quartz stone powder, recycled glass, Fuller’s earth (multani mitti), and natural tree resin gum. Master artisan Riya Patel hand-presses this special dough into open terracotta moulds, air-dries each piece under the desert sun, and brushes intricate floral arabesques using cobalt and copper oxide mineral pigments before a slow open-pit firing.
+            </p>
+          </div>
+
+          <!-- Right: Artisan Mini-Card -->
+          <div class="col-12 col-md-5 col-lg-4">
+            <article class="card-wh p-4 d-flex flex-column align-items-center text-center" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; box-shadow: none;">
+              <!-- Avatar Circle -->
+              <div style="width: 76px; height: 76px; border-radius: 50%; overflow: hidden; margin-bottom: 0.85rem; border: 2.5px solid #C97C3A; box-shadow: 0 4px 10px rgba(45,31,14,0.1);">
+                <img src="assets/images/artisan_riya.jpg" alt="Riya Patel" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: #2D1F0E;">
+                Riya Patel
+              </h3>
+              <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">
+                Master Blue Potter
+              </div>
+              <div class="mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+                Jaipur, Rajasthan
+              </div>
+              <p class="mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58; line-height: 1.5;">
+                Preserving 4th-generation Kot Jewar blue pottery and empowering 15 women artisans in her village cooperative.
+              </p>
+              <a href="artisan-profile.html" class="btn-outline-amber btn-sm w-100" style="text-decoration: none;">
+                View full profile
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6 — RELATED PRODUCTS
+         - Background white, padding 3rem 0
+         - H2 Playfair "You Might Also Like"
+         - 4 compact product cards (col-md-3)
+         ========================================================================== -->
+    <section style="background-color: #FFFFFF; padding: 3rem 0;">
+      <div class="container">
+        <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #2D1F0E;">
+          You Might Also Like
+        </h2>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-6 col-md-3">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div style="height: 160px; overflow: hidden;">
+                <img src="assets/images/terracotta_matka.jpg" alt="Terracotta Water Matka" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Terracotta Water Matka
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">
+                  By Riya Patel
+                </div>
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #C97C3A;">
+                  ₹850
+                </div>
+                <a href="product-detail.html" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                  View Details
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-6 col-md-3">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div style="height: 160px; overflow: hidden;">
+                <img src="assets/images/terracotta_table_lamp.jpg" alt="Terracotta Table Lamp" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Terracotta Table Lamp
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">
+                  By Rameshwar Prajapati
+                </div>
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #C97C3A;">
+                  ₹1,650
+                </div>
+                <a href="product-detail.html" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                  View Details
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-6 col-md-3">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div style="height: 160px; overflow: hidden;">
+                <img src="assets/images/jagannath_wood_idol.jpg" alt="Jagannath Neem Wood Idol" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Jagannath Neem Wood Idol
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">
+                  By Subhash C. Mohapatra
+                </div>
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #C97C3A;">
+                  ₹1,850
+                </div>
+                <a href="product-detail.html" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                  View Details
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-6 col-md-3">
+            <article class="card-wh h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <div style="height: 160px; overflow: hidden;">
+                <img src="assets/images/dhokra_brass_figurine.jpg" alt="Dhokra Brass Figurine" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="card-body d-flex flex-column p-3 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2D1F0E;">
+                  Dhokra Brass Figurine
+                </h3>
+                <div class="mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #C97C3A;">
+                  By Budhram Baghel
+                </div>
+                <div class="mb-3 mt-auto" style="font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: #C97C3A;">
+                  ₹1,200
+                </div>
+                <a href="product-detail.html" class="btn-amber btn-sm w-100 text-center d-block" style="text-decoration: none;">
+                  View Details
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 4 — ORDER MODAL (Bootstrap Modal)
+       - Trigger: "Place Order" button
+       - Fields: Full Name*, Email*, Phone*, Quantity (number), Delivery address* (textarea)
+       - Note: "This is a demo order. No real payment is processed."
+       - Submit: btn-amber "Confirm Order" → success message " Order placed! Riya will confirm within 24h."
+       - On success: show green success card, hide form
+       ========================================================================== -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-wh">
+        <div class="modal-header modal-header-wh d-flex justify-content-between align-items-center">
+          <h2 class="modal-title modal-title-wh mb-0" id="orderModalLabel">
+            Place an Order
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Active Order Form -->
+          <form id="orderForm" class="form-wh">
+            <div class="p-3 mb-3" style="background-color: #FDF8F3; border-radius: 8px; border: 1px solid #E8D8C4;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #2D1F0E;">Blue Pottery Vase</div>
+                  <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">By Riya Patel, Rajasthan</div>
+                </div>
+                <div style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 600; color: #C97C3A;" id="orderPriceTotal">₹1,200</div>
+              </div>
+            </div>
+
+            <!-- Full Name* -->
+            <div class="form-group mb-3">
+              <label for="orderFullName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="text" id="orderFullName" class="form-control" placeholder="e.g. Radhika Verma" required>
+            </div>
+
+            <!-- Email* -->
+            <div class="form-group mb-3">
+              <label for="orderEmail">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="email" id="orderEmail" class="form-control" placeholder="e.g. radhika@example.com" required>
+            </div>
+
+            <!-- Phone* -->
+            <div class="form-group mb-3">
+              <label for="orderPhone">Phone Number <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="tel" id="orderPhone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+            </div>
+
+            <!-- Quantity -->
+            <div class="form-group mb-3">
+              <label for="orderQtyInput">Quantity</label>
+              <input type="number" id="orderQtyInput" class="form-control" min="1" max="8" value="1" required>
+            </div>
+
+            <!-- Delivery Address* -->
+            <div class="form-group mb-3">
+              <label for="orderAddress">Delivery Address <span class="required" style="color: #C97C3A;">*</span></label>
+              <textarea id="orderAddress" rows="3" class="form-control" placeholder="Flat / House No, Street, City, State, PIN Code" required></textarea>
+            </div>
+
+            <!-- Demo Note -->
+            <p class="text-center mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+              This is a demo order. No real payment is processed.
+            </p>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-amber w-100" style="padding: 0.75rem 1rem; font-size: 15px;">
+              Confirm Order
+            </button>
+          </form>
+
+          <!-- Success Card State -->
+          <div id="orderSuccessState" class="text-center py-4 d-none">
+            <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;">
+              Order placed! Riya will confirm within 24h.
+            </h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; max-width: 380px; margin: 0 auto 1.5rem;">
+              Your order confirmation and direct artisan dispatch receipt have been scheduled. Thank you for supporting indigenous crafts!
+            </p>
+            <button type="button" class="btn-outline-amber btn-sm" data-bs-dismiss="modal">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 5 — ENQUIRY MODAL (Reused from artisan profile)
+       - Trigger: "Send Enquiry" button
+       - Modal header: "Send an Enquiry" (Playfair 20px), close button
+       - Form fields (.form-wh): Full Name*, Email*, Phone, Message* (textarea 4 rows), Product name pre-filled
+       - Submit: "Send Enquiry" btn-amber full-width
+       - Below button: "We'll respond within 24 hours." (12px muted centered)
+       - On submit: hide form, show success message "✅ Enquiry sent! Riya will contact you soon." (green text, Playfair)
+       ========================================================================== -->
+  <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-wh">
+        <div class="modal-header modal-header-wh d-flex justify-content-between align-items-center">
+          <h2 class="modal-title modal-title-wh mb-0" id="enquiryModalLabel">
+            Send an Enquiry
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Active Form Container -->
+          <form id="enquiryForm" class="form-wh">
+            <!-- Full Name* -->
+            <div class="form-group mb-3">
+              <label for="enquiryFullName">Full Name <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="text" id="enquiryFullName" class="form-control" placeholder="e.g. Ananya Sen" required>
+            </div>
+
+            <!-- Email* -->
+            <div class="form-group mb-3">
+              <label for="enquiryEmail">Email Address <span class="required" style="color: #C97C3A;">*</span></label>
+              <input type="email" id="enquiryEmail" class="form-control" placeholder="e.g. ananya@example.com" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group mb-3">
+              <label for="enquiryPhone">Phone Number (Optional)</label>
+              <input type="tel" id="enquiryPhone" class="form-control" placeholder="Enter 10-digit mobile number">
+            </div>
+
+            <!-- Product / Subject (Pre-filled) -->
+            <div class="form-group mb-3">
+              <label for="enquiryProduct">Product / Subject</label>
+              <input type="text" id="enquiryProduct" class="form-control" value="Blue Pottery Vase (₹1,200)" readonly>
+            </div>
+
+            <!-- Message* (textarea 4 rows) -->
+            <div class="form-group mb-4">
+              <label for="enquiryMessage">Message <span class="required" style="color: #C97C3A;">*</span></label>
+              <textarea id="enquiryMessage" rows="4" class="form-control" placeholder="Ask about custom motifs, bulk corporate gifting, care instructions, or dispatch time..." required></textarea>
+            </div>
+
+            <!-- Submit Button (btn-amber full-width) -->
+            <button type="submit" class="btn-amber w-100" style="padding: 0.75rem 1rem; font-size: 15px;">
+              Send Enquiry
+            </button>
+
+            <!-- Below button caption -->
+            <p class="text-center mt-3 mb-0" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">
+              We'll respond within 24 hours.
+            </p>
+          </form>
+
+          <!-- Success Message State -->
+          <div id="enquirySuccessState" class="text-center py-4 d-none">
+            <div style="font-size: 48px; margin-bottom: 1rem;">✅</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #3D6B3D; font-weight: 600; margin-bottom: 0.75rem;">
+              Enquiry sent! Riya will contact you soon.
+            </h3>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #9A7A58; max-width: 380px; margin: 0 auto 1.5rem;">
+              Thank you for inquiring about this hand-painted piece. Riya will review your questions and reach out promptly.
+            </p>
+            <button type="button" class="btn-outline-amber btn-sm" data-bs-dismiss="modal">
+              Close Window
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Gallery, Quantity & Modal JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Gallery Thumbnail Interaction
+      const mainProductImage = document.getElementById('mainProductImage');
+      const thumbnails = document.querySelectorAll('.gallery-thumb-box');
+
+      thumbnails.forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+          thumbnails.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+
+          const newImg = this.getAttribute('data-img');
+          if (mainProductImage && newImg) {
+            mainProductImage.src = newImg;
+          }
+        });
+      });
+
+      // 2. Quantity Selector
+      const qtyInput = document.getElementById('qtyInput');
+      const qtyMinus = document.getElementById('qtyMinus');
+      const qtyPlus = document.getElementById('qtyPlus');
+      const orderQtyInput = document.getElementById('orderQtyInput');
+      const orderPriceTotal = document.getElementById('orderPriceTotal');
+      const unitPrice = 1200;
+
+      function updatePriceDisplay(qty) {
+        const total = unitPrice * qty;
+        if (orderPriceTotal) {
+          orderPriceTotal.textContent = '₹' + total.toLocaleString('en-IN');
+        }
+      }
+
+      if (qtyMinus && qtyPlus && qtyInput) {
+        qtyMinus.addEventListener('click', function () {
+          let val = parseInt(qtyInput.value) || 1;
+          if (val > 1) {
+            val--;
+            qtyInput.value = val;
+            if (orderQtyInput) orderQtyInput.value = val;
+            updatePriceDisplay(val);
+          }
+        });
+
+        qtyPlus.addEventListener('click', function () {
+          let val = parseInt(qtyInput.value) || 1;
+          if (val < 8) { // stock limit is 8
+            val++;
+            qtyInput.value = val;
+            if (orderQtyInput) orderQtyInput.value = val;
+            updatePriceDisplay(val);
+          }
+        });
+      }
+
+      if (orderQtyInput) {
+        orderQtyInput.addEventListener('input', function () {
+          let val = parseInt(this.value) || 1;
+          if (val < 1) val = 1;
+          if (val > 8) val = 8;
+          this.value = val;
+          if (qtyInput) qtyInput.value = val;
+          updatePriceDisplay(val);
+        });
+      }
+
+      // 3. Order Modal Form
+      const orderForm = document.getElementById('orderForm');
+      const orderSuccessState = document.getElementById('orderSuccessState');
+      const orderModalEl = document.getElementById('orderModal');
+
+      if (orderForm) {
+        orderForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          orderForm.classList.add('d-none');
+          orderSuccessState.classList.remove('d-none');
+        });
+      }
+
+      if (orderModalEl) {
+        orderModalEl.addEventListener('hidden.bs.modal', function () {
+          if (orderForm) {
+            orderForm.reset();
+            orderForm.classList.remove('d-none');
+          }
+          if (orderSuccessState) {
+            orderSuccessState.classList.add('d-none');
+          }
+          // Sync with page qty
+          const currentQty = parseInt(qtyInput.value) || 1;
+          if (orderQtyInput) orderQtyInput.value = currentQty;
+          updatePriceDisplay(currentQty);
+        });
+      }
+
+      // 4. Enquiry Modal Form
+      const enquiryForm = document.getElementById('enquiryForm');
+      const enquirySuccessState = document.getElementById('enquirySuccessState');
+      const enquiryModalEl = document.getElementById('enquiryModal');
+
+      if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          enquiryForm.classList.add('d-none');
+          enquirySuccessState.classList.remove('d-none');
+        });
+      }
+
+      if (enquiryModalEl) {
+        enquiryModalEl.addEventListener('hidden.bs.modal', function () {
+          if (enquiryForm) {
+            enquiryForm.reset();
+            const enquiryProductField = document.getElementById('enquiryProduct');
+            if (enquiryProductField) enquiryProductField.value = "Blue Pottery Vase (₹1,200)";
+            enquiryForm.classList.remove('d-none');
+          }
+          if (enquirySuccessState) {
+            enquirySuccessState.classList.add('d-none');
+          }
+        });
+      }
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

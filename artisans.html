@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ==========================================================================
+     SHARED HEAD BLOCK (HastKala — Warm Heritage Design System)
+     ========================================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the master artisans of HastKala. Over 200 skilled hands across 15 Indian states preserving generational crafts and cultural heritage.">
+  <title>Our Artisans | HastKala</title>
+
+  <!-- Google Fonts: Playfair Display (500, 600) + DM Sans (400, 500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CDN (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Warm Heritage Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       SHARED NAVBAR (Sticky Top, Collapsible on Mobile)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-wh sticky-top">
+    <div class="container">
+      <!-- Left: Logo in Playfair Display, color #F5E6C8 -->
+      <a class="navbar-brand nav-logo" href="index.html">
+        HastKala
+      </a>
+
+      <!-- Mobile: Hamburger Menu (Bootstrap navbar-toggler) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hastkalaNav" aria-controls="hastkalaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Links (Collapses on Mobile) -->
+      <div class="collapse navbar-collapse" id="hastkalaNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link active" href="artisans.html">Artisans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ngos.html">NGOs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Login Button -->
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-amber btn-sm">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1 — PAGE HERO (smaller than home hero)
+         - Background linear-gradient(135deg, #2D1F0E, #7A4520), height 240px
+         - Centered: H1 Playfair 40px white "Our Artisans", sub "200+ skilled hands from 15 Indian states."
+         - Breadcrumb: Home › Artisans (12px, rgba white .6)
+         ========================================================================== -->
+    <section class="page-hero-wh" style="background: linear-gradient(135deg, #2D1F0E, #7A4520); height: 240px; display: flex; align-items: center; justify-content: center; text-align: center;">
+      <div class="container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 600; color: #FFFFFF; margin-bottom: 0.5rem;">Our Artisans</h1>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.85); margin-bottom: 0.75rem;">200+ skilled hands from 15 Indian states.</p>
+        <nav class="breadcrumb-wh d-flex justify-content-center align-items-center gap-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.6);" aria-label="breadcrumb">
+          <a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Home</a>
+          <span style="color: rgba(255, 255, 255, 0.6);">›</span>
+          <span style="color: rgba(255, 255, 255, 0.6);">Artisans</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2 — FILTER BAR
+         - Background white, border-bottom 1px #E8D8C4, padding 1rem 0, sticky below navbar
+         - Row with Bootstrap grid (col-auto items, align center):
+           - Search input (placeholder "Search by name or craft..."), 300px wide, .form-wh style
+           - Dropdown "All Crafts" (Pottery, Weaving, Embroidery, Woodwork, Jewellery) — .form-wh style
+           - Dropdown "All States" (Rajasthan, Gujarat, Odisha, UP, Tamil Nadu, Maharashtra) — .form-wh style
+           - "Clear filters" small link in #C97C3A, right side
+         ========================================================================== -->
+    <section class="filter-bar-wh" style="background-color: #FFFFFF; border-bottom: 1px solid #E8D8C4; padding: 1rem 0; position: sticky; top: 58px; z-index: 900;">
+      <div class="container">
+        <!-- Desktop Filters -->
+        <form class="form-wh desktop-filters" id="artisanFilterForm" onsubmit="event.preventDefault();">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-md-auto" style="width: 300px; max-width: 100%;">
+              <input type="search" id="searchInput" class="w-100" placeholder="Search by name or craft..." aria-label="Search by name or craft" style="min-height: 44px;">
+            </div>
+            <div class="col-12 col-md-auto">
+              <select id="craftFilter" aria-label="Filter by craft" style="min-height: 44px;">
+                <option value="">All Crafts</option>
+                <option value="Pottery">Pottery</option>
+                <option value="Weaving">Weaving</option>
+                <option value="Embroidery">Embroidery</option>
+                <option value="Woodwork">Woodwork</option>
+                <option value="Jewellery">Jewellery</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-auto">
+              <select id="stateFilter" aria-label="Filter by state" style="min-height: 44px;">
+                <option value="">All States</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Odisha">Odisha</option>
+                <option value="UP">UP</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Maharashtra">Maharashtra</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-auto ms-md-auto">
+              <a href="#" class="clear-link" id="clearFiltersBtn" style="color: var(--color-amber-btn, #A85A18); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0.5rem 0.75rem;">Clear filters</a>
+            </div>
+          </div>
+        </form>
+
+        <!-- New Component 2: Mobile Filter Bar (≤768px) -->
+        <div class="filter-mobile-bar">
+          <input type="search" id="searchInputMobile" class="form-control" placeholder="Search craft..." style="min-height: 44px;" oninput="document.getElementById('searchInput').value = this.value; filterArtisans();">
+          <button class="filter-trigger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterDrawer" aria-controls="mobileFilterDrawer">
+            Filters <span class="badge rounded-pill text-white" style="background-color: var(--color-amber-btn, #A85A18);" id="mobileFilterBadge">0</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Component 2: Mobile Filter Offcanvas Drawer -->
+    <div class="offcanvas offcanvas-bottom filter-offcanvas-wh" tabindex="-1" id="mobileFilterDrawer" aria-labelledby="mobileFilterLabel">
+      <div class="filter-offcanvas-header d-flex justify-content-between align-items-center">
+        <h5 class="offcanvas-title mb-0" id="mobileFilterLabel" style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-bark);">Filter Artisans</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="min-width: 44px; min-height: 44px;"></button>
+      </div>
+      <div class="filter-offcanvas-body">
+        <div class="mb-4">
+          <label class="form-label fw-medium text-bark" for="mobileCraftFilter">Craft Discipline</label>
+          <select id="mobileCraftFilter" class="form-select" style="min-height: 44px;" onchange="document.getElementById('craftFilter').value = this.value; filterArtisans(); updateBadge();">
+            <option value="">All Crafts</option>
+            <option value="Pottery">Pottery</option>
+            <option value="Weaving">Weaving</option>
+            <option value="Embroidery">Embroidery</option>
+            <option value="Woodwork">Woodwork</option>
+            <option value="Jewellery">Jewellery</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="form-label fw-medium text-bark" for="mobileStateFilter">State of Origin</label>
+          <select id="mobileStateFilter" class="form-select" style="min-height: 44px;" onchange="document.getElementById('stateFilter').value = this.value; filterArtisans(); updateBadge();">
+            <option value="">All States</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Odisha">Odisha</option>
+            <option value="UP">UP</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Maharashtra">Maharashtra</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-offcanvas-footer d-flex gap-2">
+        <button type="button" class="btn btn-outline-secondary w-50" style="min-height: 48px;" onclick="resetFilters();" data-bs-dismiss="offcanvas">Reset</button>
+        <button type="button" class="btn btn-amber w-50" style="min-height: 48px;" data-bs-dismiss="offcanvas">Apply</button>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SECTION 3 — ARTISAN GRID
+         - Background #FDF8F3, padding 3rem 0
+         - Bootstrap row, 3-column on desktop (col-md-4), 1-column on mobile (col-12)
+         - 9 artisan cards (.card-wh):
+           Image area 220px: colored bg + large centered emoji (craft-relevant)
+           Card body:
+             .tag-artisan badge top-right (CSS position absolute inside card)
+             Name: DM Sans 18px/500, color #2D1F0E
+             Craft type: 13px #C97C3A
+             State: 12px #9A7A58 with 
+             Bio: 2 lines max, 13px #9A7A58, overflow hidden
+             Bottom: "View Profile" btn-amber (small, full-width) → artisan-profile.html
+         - Static placeholder data for all 9 cards (different names, crafts, states)
+         ========================================================================== -->
+    <section class="section-wh" style="background-color: #FDF8F3; padding: 3rem 0;">
+      <div class="container">
+        <!-- Live Result Count Indicator -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58;" id="resultsCount">
+            Showing all 9 master craftspeople
+          </div>
+        </div>
+
+        <div class="row g-4" id="artisanGrid">
+          <!-- Card 1: Rameshwar Prajapati (Pottery, Rajasthan) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Rameshwar Prajapati" data-craft="Pottery" data-state="Rajasthan">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right (CSS position absolute inside card) -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Master Potter</span>
+              <!-- Image area 220px: colored bg + large centered emoji -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/pottery_artisan.jpg" alt="Rameshwar Prajapati" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Terracotta · Rajasthan</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Rameshwar Prajapati</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Pottery</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Rajasthan</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  3rd generation terracotta artisan reviving porous earthen cooling pots and traditional ceremonial clay lamps.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Saraswati Devi (Weaving, UP) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Saraswati Devi" data-craft="Weaving" data-state="UP">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Heritage Weaver</span>
+              <!-- Image area 220px: colored bg + large centered emoji -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/weaving_artisan.jpg" alt="Saraswati Devi" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Handloom · UP</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Saraswati Devi</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Weaving</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">UP</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Celebrated handloom master weaving pure Banarasi silk sarees with timeless silver and gold zari patterns.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Kiritbhai Vankar (Weaving, Gujarat) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Kiritbhai Vankar" data-craft="Weaving" data-state="Gujarat">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Kutchi Artisan</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_kiritbhai.jpg" alt="Kiritbhai Vankar" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Handloom · Gujarat</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Kiritbhai Vankar</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Weaving</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Gujarat</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Weaver of geometric extra-weft Kutchi woollen shawls crafted using organic vegetable dyes and heritage looms.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Fatima Khatun (Embroidery, UP) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Fatima Khatun" data-craft="Embroidery" data-state="UP">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Master Embroiderer</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_fatima.jpg" alt="Fatima Khatun" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Chikankari · UP</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Fatima Khatun</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Embroidery</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">UP</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Exquisite Chikankari shadow-work artist leading an independent cooperative of 60 women artisans across Lucknow.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 5: Subhash Chandra Mohapatra (Woodwork, Odisha) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Subhash Chandra Mohapatra" data-craft="Woodwork" data-state="Odisha">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Heritage Carver</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_subhash.jpg" alt="Subhash Chandra Mohapatra" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Woodwork · Odisha</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Subhash C. Mohapatra</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Woodwork</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Odisha</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Carrying forward 12th-century Jagannath temple wood carving traditions and intricate neem-wood sculptures.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 6: Meenakshi Sundaram (Jewellery, Tamil Nadu) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Meenakshi Sundaram" data-craft="Jewellery" data-state="Tamil Nadu">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Temple Goldsmith</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_meenakshi.jpg" alt="Meenakshi Sundaram" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Temple Art · Tamil Nadu</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Meenakshi Sundaram</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Jewellery</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Tamil Nadu</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Master craftsman preserving ancient Thanjavur temple jewellery using silver repoussé foil and natural stones.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 7: Vasantrao Shinde (Woodwork, Maharashtra) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Vasantrao Shinde" data-craft="Woodwork" data-state="Maharashtra">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Folk Toymaker</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_vasantrao.jpg" alt="Vasantrao Shinde" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Lacquer Craft · Maharashtra</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Vasantrao Shinde</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Woodwork</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Maharashtra</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Artisan hand-turning Sawantwadi wooden toys, lacquered spinning tops, and heritage Ganjifa playing card sets.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 8: Manjula Ben Parmar (Embroidery, Gujarat) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Manjula Ben Parmar" data-craft="Embroidery" data-state="Gujarat">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Rabari Artisan</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_sunita.jpg" alt="Manjula Ben Parmar" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Mirror Work · Gujarat</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Manjula Ben Parmar</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Embroidery</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Gujarat</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Renowned for high-density Ahir and Rabari mirror-work embroidery on organic cotton wall hangings and stoles.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 9: Devendra Kumhar (Pottery, Maharashtra) -->
+          <div class="col-12 col-md-4 artisan-item" data-name="Devendra Kumhar" data-craft="Pottery" data-state="Maharashtra">
+            <article class="card-wh position-relative h-100 d-flex flex-column" style="background-color: #FFFFFF; border: 1px solid #E8D8C4; border-radius: 12px; overflow: hidden; box-shadow: none;">
+              <!-- .tag-artisan badge top-right -->
+              <span class="tag-artisan position-absolute" style="top: 14px; right: 14px; z-index: 5; background-color: #FDF0E0; color: #B06820; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 20px;">Urban Potter</span>
+              <!-- Image area 220px: real artisan photography -->
+              <div class="card-img-wrapper h-220">
+                <img src="assets/images/artisan_gopal.jpg" alt="Devendra Kumhar" class="card-img" loading="lazy">
+                <span class="craft-provenance-pill position-absolute" style="bottom: 12px; left: 12px;">Terracotta · Maharashtra</span>
+              </div>
+              <!-- Card body -->
+              <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                <h3 class="card-title mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: #2D1F0E; line-height: 1.3;">Devendra Kumhar</h3>
+                <div class="craft-type mb-1" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C97C3A; font-weight: 500;">Pottery</div>
+                <div class="artisan-state mb-2" style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9A7A58;">Maharashtra</div>
+                <p class="artisan-bio mb-3" style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: #9A7A58; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                  Master potter crafting architectural terracotta planters, decorative wall tiles, and festive handcrafted diyas.
+                </p>
+                <div class="mt-auto pt-2">
+                  <a href="artisan-profile.html" class="btn-amber btn-sm w-100 text-center d-block">View Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- No Results Fallback State (Hidden by default) -->
+        <div id="noResultsState" class="text-center py-5 d-none">
+          <div style="font-size: 48px; margin-bottom: 1rem;"></div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #2D1F0E;">No artisans match your filters</h3>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #9A7A58; max-width: 480px; margin: 0 auto;">Try clearing your search terms or picking another craft category or state.</p>
+          <button type="button" class="btn-outline-amber mt-3" id="resetBtn">Reset All Filters</button>
+        </div>
+
+        <!-- ==========================================================================
+             SECTION 4 — PAGINATION
+             - Centered below grid: Previous · 1 · 2 · 3 · Next
+             - Current page: #C97C3A color, underline
+             - Bootstrap pagination component, styled to match amber palette
+             ========================================================================== -->
+        <nav aria-label="Artisans page navigation" class="mt-5">
+          <ul class="pagination pagination-wh justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER (4-Column Bootstrap Grid)
+       ========================================================================== -->
+  <footer class="footer-wh">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Col 1: Brand, Tagline, Social Icons -->
+        <div class="col-12 col-md-3">
+          <a href="index.html" class="navbar-brand nav-logo">HastKala</a>
+          <p class="footer-tagline">Connecting Indian craft with the world.</p>
+          
+        </div>
+
+        <!-- Col 2: Heading "Explore" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="artisans.html">Artisans</a></li>
+            <li><a href="ngos.html">NGOs</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Heading "Support" -->
+        <div class="col-6 col-md-3">
+          <h4 class="footer-head">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Heading "About" -->
+        <div class="col-12 col-md-3">
+          <h4 class="footer-head">About</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Admin Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Strip: Copyright -->
+      <div class="footer-strip">
+        <p class="mb-0">© 2027 HastKala. Built for Indian artisans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Client-side Interactive Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('searchInput');
+      const craftFilter = document.getElementById('craftFilter');
+      const stateFilter = document.getElementById('stateFilter');
+      const clearBtn = document.getElementById('clearFiltersBtn');
+      const resetBtn = document.getElementById('resetBtn');
+      const items = document.querySelectorAll('.artisan-item');
+      const noResults = document.getElementById('noResultsState');
+      const resultsCount = document.getElementById('resultsCount');
+
+      function filterArtisans() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        const selectedCraft = (craftFilter.value || '').trim().toLowerCase();
+        const selectedState = (stateFilter.value || '').trim().toLowerCase();
+
+        let visibleCount = 0;
+
+        items.forEach(function (card) {
+          const name = (card.getAttribute('data-name') || '').toLowerCase();
+          const craft = (card.getAttribute('data-craft') || '').toLowerCase();
+          const state = (card.getAttribute('data-state') || '').toLowerCase();
+
+          const matchesQuery = !query || name.includes(query) || craft.includes(query) || state.includes(query);
+          const matchesCraft = !selectedCraft || craft === selectedCraft;
+          const matchesState = !selectedState || state === selectedState;
+
+          if (matchesQuery && matchesCraft && matchesState) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('d-none');
+          resultsCount.textContent = 'No artisans found';
+        } else {
+          noResults.classList.add('d-none');
+          resultsCount.textContent = 'Showing ' + visibleCount + ' master craftsperson' + (visibleCount === 1 ? '' : 's');
+        }
+      }
+
+      function clearAll() {
+        searchInput.value = '';
+        craftFilter.value = '';
+        stateFilter.value = '';
+        filterArtisans();
+      }
+
+      if (searchInput) searchInput.addEventListener('input', filterArtisans);
+      if (craftFilter) craftFilter.addEventListener('change', filterArtisans);
+      if (stateFilter) stateFilter.addEventListener('change', filterArtisans);
+      if (clearBtn) clearBtn.addEventListener('click', function(e) { e.preventDefault(); clearAll(); });
+      if (resetBtn) resetBtn.addEventListener('click', clearAll);
+    });
+  </script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
